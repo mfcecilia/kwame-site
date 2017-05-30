@@ -29,9 +29,9 @@ p {
 
 /*specific to divs for all sections on the right side*/
 .jobs, .about, .contact, .home, .faq {
-    padding: 20px;
-    margin: 20px;
-    width: 70%;
+    padding: 60px;
+    margin: auto;
+    width: 75%;
     float: right;
     transition-timing-function: ease-in;
     transition: 0.2s;
@@ -183,4 +183,5 @@ li a:hover {
 .jobs, .about, .contact, .faq {
     border-right: solid #164f9c 2px;
     border-bottom: solid #164f9c 2px;
+    margin: 10px;
 }
