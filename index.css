@@ -16,14 +16,14 @@ p {
     color: #02356a;
 }
 
-/*site and menu words in the menu*/
-#sites, #menu {
+/*the word "Menu" in the menu bar*/
+#menu {
     font-size: 30px;
     color: whitesmoke;
 }
 
 /*divs for all sections on the right side*/
-.search, .thai, .about, .contact, .home, .faq {
+.jobs, .about, .contact, .home, .faq {
     text-align: center;
     padding: 20px;
     margin: 20px;
@@ -34,7 +34,7 @@ p {
 }
 
 /*border lines between sections*/
-.search, .thai, .about, .contact, .faq {
+.jobs, .about, .contact, .faq {
     border-right: solid #164f9c 2px;
     border-bottom: solid #164f9c 2px;
 
