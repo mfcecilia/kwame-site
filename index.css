@@ -1,0 +1,82 @@
+body {
+    font-family: 'PT Sans', sans-serif;
+}
+
+h1, h5, h3 {
+    text-align: center;
+    color: dimgrey;
+}
+
+p {
+    text-align: center;
+    color: dimgray;
+}
+
+#sites, #menu {
+    font-size: 30px;
+    color: whitesmoke;
+}
+
+.dubai, .thai, .about, .contact, .home, .faq {
+    text-align: center;
+    padding: 20px;
+    margin: 20px;
+    width: 70%;
+    float: right;
+    transition-timing-function: ease-in;
+    transition: 0.2s;
+}
+
+.dubai, .thai, .about, .contact, .faq {
+    border-right: solid indianred 2px;
+    border-bottom: solid indianred 2px;
+
+}
+
+
+button {
+    background-color: indianred;
+    border: none;
+    color: whitesmoke;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #4CAF50; /* Green */
+    color: white;
+}
+
+ul, .menu {
+    list-style-type: none;
+    overflow: auto;
+    position: fixed;
+    padding: 0;
+    margin: 0;
+    width: 25%;
+    background-color: black;
+    height: 100%;
+}
+
+
+li a {
+    color: lightgrey;
+    text-align: center;
+    padding: 8px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+li a:hover {
+    background-color: indianred;
+}
+
+.active {
+    background-color: indianred;
+}
