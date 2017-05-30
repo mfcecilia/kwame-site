@@ -16,15 +16,19 @@ p {
     color: #02356a;
 }
 
-/*the word "Menu" in the menu bar*/
-#menu {
-    font-size: 30px;
-    color: whitesmoke;
+
+/*specific to the home div*/
+.home {
+    text-align: center;
 }
 
-/*divs for all sections on the right side*/
-.jobs, .about, .contact, .home, .faq {
+/*specific to the job search div*/
+.jobs {
     text-align: center;
+}
+
+/*specific to divs for all sections on the right side*/
+.jobs, .about, .contact, .home, .faq {
     padding: 20px;
     margin: 20px;
     width: 70%;
@@ -33,15 +37,73 @@ p {
     transition: 0.2s;
 }
 
-/*border lines between sections*/
-.jobs, .about, .contact, .faq {
-    border-right: solid #164f9c 2px;
-    border-bottom: solid #164f9c 2px;
+#jobs #jobs-alphabetical, #jobs #jobs-amounts {
+    margin-bottom: 20px;
+} 
 
+/*job search dropdown buttons*/
+.btn-alpha, .btn-amt {
+    background-color: #164f9c;
+    border: none;
+    color: whitesmoke;
+    padding: 10px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    margin: auto;
+    font-size: 16px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
 }
 
-/*payment button*/
-button {
+/*job search dropdown buttons color change*/
+.btn-alpha:hover, .btn-amt:hover, #btn-alpha:focus, #btn-amt:focus {
+    background-color: #4CAF50; /* Green */
+    color: white;
+}
+
+/*job search drop down content inside*/
+.alpha-content, .amt-content {
+    position: relative;
+    display: inline-block;
+}
+
+/*job search drop down content hidden by default*/
+.alpha-content, .amt-content {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    min-width: 160px;
+    background-color: #f1e9e7;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+/*links inside job search dropdowns*/
+.alpha-content a, .amt-content a {
+    color: #02356a;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/*color change of job search dropdown links*/
+.alpha-content a:hover, .amt-content a:hover {
+    background-color: #f1e9e7;
+}
+
+/*show job search drop down menus on click*/
+.alpha, .amt {
+    display: block;
+}
+
+/*search result preview window*/
+#result-preview {
+    
+}
+
+/*purchase button*/
+#purchase {
     background-color: #164f9c;
     border: none;
     color: whitesmoke;
@@ -55,10 +117,16 @@ button {
     cursor: pointer;
 }
 
-/*button color change*/
-button:hover {
+/*purchase button color change*/
+#purchase:hover {
     background-color: #4CAF50; /* Green */
     color: white;
+}
+
+/*the word "Menu" in the menu bar*/
+#menu {
+    font-size: 30px;
+    color: whitesmoke;
 }
 
 /*side menu*/
@@ -90,4 +158,11 @@ li a:hover {
 /*side menu buttons*/
 .active {
     background-color: #164f9c;
+}
+
+/*border lines between sections*/
+.jobs, .about, .contact, .faq {
+    border-right: solid #164f9c 2px;
+    border-bottom: solid #164f9c 2px;
+
 }
