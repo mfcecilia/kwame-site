@@ -1,0 +1,7 @@
+Instead of trying to do it in 2D solutions (horizontal or side by side placement), try using the z-index. Maybe that is more intuitive for computers. Floats.
+
+Make the search result selection process in the z-index.
+
+Right now, the flow of the site is in a downward direction. It's linear. But when the process splits (job search portion), it tries to force a left and right direction of flow. But that actually doesn't make sense. The ones who build the computer already established that you will scroll up and down. Because left to right scrolling things just feel awkward, and our fingers don't do that easily with a mouse. And I feel like even our eyes move more up and down than left and right on our day to day (i need to research that eye information). 
+
+We can handle, and even prefer 3D as our method of attaining visual information. So making it 3D would make more sense before incorporating the horizontal. 
