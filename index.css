@@ -1,23 +1,29 @@
+/*global page properties*/
 body {
     font-family: 'PT Sans', sans-serif;
 }
 
+/*larger heading text*/
 h1, h5, h3 {
     text-align: center;
-    color: dimgrey;
+    color: #02356a;
 }
 
+
+/*all paragraphed sized text*/
 p {
     text-align: center;
-    color: dimgray;
+    color: #02356a;
 }
 
+/*site and menu words in the menu*/
 #sites, #menu {
     font-size: 30px;
     color: whitesmoke;
 }
 
-.dubai, .thai, .about, .contact, .home, .faq {
+/*divs for all sections on the right side*/
+.search, .thai, .about, .contact, .home, .faq {
     text-align: center;
     padding: 20px;
     margin: 20px;
@@ -27,15 +33,16 @@ p {
     transition: 0.2s;
 }
 
-.dubai, .thai, .about, .contact, .faq {
-    border-right: solid indianred 2px;
-    border-bottom: solid indianred 2px;
+/*border lines between sections*/
+.search, .thai, .about, .contact, .faq {
+    border-right: solid #164f9c 2px;
+    border-bottom: solid #164f9c 2px;
 
 }
 
-
+/*payment button*/
 button {
-    background-color: indianred;
+    background-color: #164f9c;
     border: none;
     color: whitesmoke;
     padding: 15px 32px;
@@ -48,11 +55,13 @@ button {
     cursor: pointer;
 }
 
+/*button color change*/
 button:hover {
     background-color: #4CAF50; /* Green */
     color: white;
 }
 
+/*side menu*/
 ul, .menu {
     list-style-type: none;
     overflow: auto;
@@ -60,11 +69,11 @@ ul, .menu {
     padding: 0;
     margin: 0;
     width: 25%;
-    background-color: black;
+    background-color: #0b0f1a;
     height: 100%;
 }
 
-
+/*side menu*/
 li a {
     color: lightgrey;
     text-align: center;
@@ -73,10 +82,12 @@ li a {
     display: block;
 }
 
+/*side menu buttons*/
 li a:hover {
-    background-color: indianred;
+    background-color: #164f9c;
 }
 
+/*side menu buttons*/
 .active {
-    background-color: indianred;
+    background-color: #164f9c;
 }
