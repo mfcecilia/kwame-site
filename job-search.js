@@ -5,8 +5,6 @@
 
 
 
-
-
 // get the modal
 var modal = document.getElementById('jobs-alpha-modal');
 
@@ -19,18 +17,30 @@ var span = document.getElementsByClassName("jobs-alpha-close")[0];
 //check if initial search button is pressed
 var alphaBtnClick = window.onload = function () {
     'use strict';
-    btn.onclick;
+    // get the search button that opens the modal
+    var btn = document.getElementById("jobs-alpha-btn");
+    btn.onclick();
 };
 
-//check if search close button is pressed
-var alphaCloseClick = span.onclick;
+//check if user clicked the button to close the alpha job search modal
+var alphaCloseClick = window.onload = function () {
+    'use strict';
+    // get the <span> element that closes the modal
+    var span = document.getElementsByClassName("jobs-alpha-close")[0];
+    span.onclick();
+};
+
 
 // when the user clicks on the button, open the modal 
 function alphaBtn() {
     'use strict';
+    // get the modal
+    var modal = document.getElementById('jobs-alpha-modal');
     console.log("inside alphaBtn function");
     if (alphaBtnClick) {
+        console.log("inside the alphabetical job search button click check");
         modal.style.display = "block";
+        console.log("the alphabetical job search button click was registered");
     } else {
         console.log("the alphaBtn function to open the modal has failed");
     }
@@ -39,11 +49,15 @@ function alphaBtn() {
 // when the user clicks on <span> (x), close the modal
 function alphaClose() {
     'use strict';
+    // get the modal
+    var modal = document.getElementById('jobs-alpha-modal');
     console.log("inside alphaClose function");
     if (alphaCloseClick) {
+        console.log("inside the close alpha job search button click check");
         modal.style.display = "none";
+        console.log("the close alpha job search button click was registered");
     } else {
-        console.log(" the alphaClose function to close the modal has failed");
+        console.log("the alphaClose function to close the modal has failed");
     }
 }
 
@@ -65,31 +79,3 @@ window.onclick = function (event) {
 //amount of contacts search
 
 
-// get the modal
-var modal = document.getElementById('jobs-amt-modal');
-
-// Get the button that opens the modal
-var btn = document.getElementById("jobs-amt-btn");
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("jobs-amt-close")[0];
-
-// When the user clicks on the button, open the modal 
-btn.onclick = function () {
-    'use strict';
-    modal.style.display = "block";
-};
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function () {
-    'use strict';
-    modal.style.display = "none";
-};
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function (event) {
-    'use strict';
-    if (event.target === modal) {
-        modal.style.display = "none";
-    }
-};
