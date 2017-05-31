@@ -5,3 +5,25 @@ Make the search result selection process in the z-index.
 Right now, the flow of the site is in a downward direction. It's linear. But when the process splits (job search portion), it tries to force a left and right direction of flow. But that actually doesn't make sense. The ones who build the computer already established that you will scroll up and down. Because left to right scrolling things just feel awkward, and our fingers don't do that easily with a mouse. And I feel like even our eyes move more up and down than left and right on our day to day (i need to research that eye information). 
 
 We can handle, and even prefer 3D as our method of attaining visual information. So making it 3D would make more sense before incorporating the horizontal. 
+
+Maybe just fill in the drop downs with a handfull of items from the excel sheet just for the sake of visuals in case I don't get to completely implement the back-end in time?
+
+Dynamic screen resizing:
+https://stackoverflow.com/questions/8717506/dynamically-resize-div-based-on-size-of-browser-window
+https://www.codecademy.com/en/forum_questions/532619b28c1ccc0cac002730
+
+
+The way the search filters are handled, it's asking you this: which is important? The company itself? Or the chances that you'll get a job? What if we could have an algorithm that answered both those questions in the form of an infographic?
+    1. rank in order of importance
+    2. if equal, here's our file with our best suggestions.
+        a. doing this, does it matter that we didn't ask them which companies they preferred?
+        b. are we going to have to ask them to scroll through? even though we want to save time?
+        c. could we start by asking them if they care at all?
+        d. is there a way to bypass everything if you already know what you want as a customer?
+        
+Job search mechanics/ui flow such that no modal box blocks another. Only one thing should be open at a time, but never such that it ruins something else elsewhere. Both in terms of convinience for user experience and for visual fluidity as well. 
+
+Maybe the Modal box can have an anchored side bar with the ability to go back (exit) or continue to the next button or/and continue to the payment.
+
+click event struggle:
+https://stackoverflow.com/questions/3007336/how-do-you-assign-a-javascript-onclick-attribute-dynamically

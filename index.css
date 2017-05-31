@@ -43,15 +43,83 @@ p {
     margin: auto;
 } 
 
-/*alphabetical company list button location*/
-#jobs-alphabetical {
-    float: left;
+/*jobs modal */
+.jobs-modal {
+    display: none; /*hidden by default*/
+    position: fixed; /*stay in place*/
+    z-index: 1; /*sit on top*/
+    left: 0;
+    top: 0;
+    width: 100%; /*full width*/
+    height: 100%; /*full height*/
+    overflow: auto; /*enable scroll if needed*/
+    background-color: rgb(0,0,0); /*fallback color*/
+    background-color: rgba(0,0,0,0,4); /*black with opacity*/
 }
 
-/*amount of company contacts button location*/
+/*jobs modal content box*/
+.alpha-modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /*15% from the top and centered*/
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /*could be more or less, depending on screen size*/
+}
+
+/*alpha modal header*/
+.alpha-modal-header {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+}
+
+/*alpha modal body*/
+.alpha-modal-body {
+    padding: 2px 16px;
+}
+
+/*alpha modal footer*/
+.alpha-modal-footer {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+}
+
+/*alpha modal content*/
+.alpha-modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+/*the jobs alpha close button*/
+.jobs-alpha-close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.jobs-alpha-close:hover,
+.jobs-alpha-close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/*alphabetical company list button location
+#jobs-alphabetical {
+    float: left;
+}*/
+
+/*amount of company contacts button location
 #jobs-amounts {
     float: right;
-}
+}*/
 
 /*job search dropdown buttons*/
 .btn-alpha, .btn-amt {

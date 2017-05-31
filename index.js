@@ -21,3 +21,9 @@ function printMenu() {
         i = i + 1;
     }
 }
+
+
+/*
+job search modal logic
+*/
+
