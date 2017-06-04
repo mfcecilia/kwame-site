@@ -36,11 +36,18 @@ function alphaBtn() {
     'use strict';
     // get the modal
     var modal = document.getElementById('jobs-alpha-modal');
+    //tell console we are inside the function
     console.log("inside alphaBtn function");
+    //check if user has clicked the alpha job search button
     if (alphaBtnClick) {
+        //tell console we registered the button click and ready to proceed
         console.log("inside the alphabetical job search button click check");
+        //display the modal
         modal.style.display = "block";
-        console.log("the alphabetical job search button click was registered");
+        //opaque backdrop displayed
+        document.getElementById("main-page-content").style.opacity = "0.5";
+        //tell console that all actions have completed successfully
+        console.log("the alphabetical job search button click actions are complete");
     } else {
         console.log("the alphaBtn function to open the modal has failed");
     }
@@ -55,6 +62,8 @@ function alphaClose() {
     if (alphaCloseClick) {
         console.log("inside the close alpha job search button click check");
         modal.style.display = "none";
+        //opaque backdrop displayed
+        document.getElementById("main-page-content").style.opacity = "1";
         console.log("the close alpha job search button click was registered");
     } else {
         console.log("the alphaClose function to close the modal has failed");
