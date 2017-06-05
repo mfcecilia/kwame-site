@@ -9,8 +9,19 @@
     
     <script src="index.js"></script>
     <script src="job-search.js"></script>
+    <script src="contractors.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    
+    <!--google sheets contractors api key-->
+    <script src="https://spreadsheets.google.com/feeds/cells/AIzaSyCt0pkxd9kwF1a0vuG6jLgstdq81FGgPXI/1/public/values?alt=json-in-script&callback=doData"></script>
+    
     <link rel="stylesheet" href="index.css">
     <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+    
+    <style type="text/css" media="print">
+        form {display: none;}
+    </style>
+    
     
     <title>Resources for Overseas Employment Opportunities</title>
     
@@ -75,7 +86,7 @@
         
             <div id="jobs-alphabetical">
                 
-                <button id="jobs-alpha-btn" class="btn-alpha" onclick="alphaBtn()">Companies - Alphabetical Order</button>
+                <button id="jobs-alpha-btn" class="btn-alpha" name="jobs-alpha-btn" onclick="alphaBtn()" onclick="getExcelData()">Companies - Alphabetical Order</button>
                 
                 
                 <div id="jobs-alpha-modal" class="jobs-modal">
@@ -93,14 +104,11 @@
                         
                             <p>Select the companies that appeal to you</p>
                             
-                                <div id="alpha" class="alpha-list">
+                            
+                                <div id="alpha-list-container" class="alpha-list-container">
                     
-                                    <ul>
-                                        jklfdjkfskjd;fjkd;ajfkdja
-                                        kjfdl;jfakd;
-                                        
-                                    </ul>
-                    
+                                    <div id="data"/>
+                                    
                                 </div>
                 
                         </div>
