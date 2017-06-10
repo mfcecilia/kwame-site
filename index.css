@@ -64,19 +64,19 @@ p {
 }
 
 /*alpha modal header*/
-.alpha-modal-header {
+.alpha-modal-header, .amt-modal-header {
     padding: 2px 16px;
     background-color: #81aef1;
     color: white;
 }
 
 /*alpha modal body*/
-.alpha-modal-body {
+.alpha-modal-body, .amt-modal-body {
     padding: 2px 16px;
 }
 
 /*alpha modal content*/
-.alpha-modal-content {
+.alpha-modal-content, .amt-modal-content {
     position: relative;
     background-color: #f1e9e7;
     margin: auto;
@@ -85,15 +85,15 @@ p {
     width: auto;
 }
 
-/*list of companies in alphabetical order*/
-.alpha-list-container {
+/*list of companies*/
+.alpha-list-container, .amt-list-container {
     padding: 5%;
     font-weight: bold;
     font-size: 20px;
 }
 
-/*alpha modal footer*/
-.alpha-modal-footer {
+/*job search modal footer*/
+.alpha-modal-footer, .amt-modal-footer {
     padding: 2px 16px;
     margin: auto;
     width: auto;
@@ -102,32 +102,28 @@ p {
     cursor: pointer;
 }
 
+.alpha-modal-footer:hover, .amt-modal-footer:hover {
+    background-color: #4CAF50; /* Green */
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+
 /*the jobs alpha close button*/
-.jobs-alpha-close {
+.jobs-alpha-close, .jobs-amt-close {
     color: #f1e9e7;
     float: right;
     font-size: 50px;
     font-weight: bold;
 }
 
-.jobs-alpha-close:hover,
-.jobs-alpha-close:focus {
+.jobs-alpha-close:hover, .jobs-alpha-close:focus, .jobs-amt-close:hover, .jobs-amt-close:focus {
     color: black;
     text-decoration: none;
     cursor: pointer;
 }
 
-/*alphabetical company list button location
-#jobs-alphabetical {
-    float: left;
-}*/
 
-/*amount of company contacts button location
-#jobs-amounts {
-    float: right;
-}*/
-
-/*job search dropdown buttons*/
+/*job search buttons*/
 .btn-alpha, .btn-amt {
     background-color: #164f9c;
     border: none;
@@ -150,39 +146,6 @@ p {
     color: white;
 }
 
-/*job search drop down content inside*/
-.alpha-content, .amt-content {
-    position: relative;
-    display: inline-block;
-}
-
-/*job search drop down content hidden by default*/
-.alpha-content, .amt-content {
-    display: none;
-    position: absolute;
-    z-index: 1;
-    min-width: 160px;
-    background-color: #f1e9e7;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-}
-
-/*links inside job search dropdowns*/
-.alpha-content a, .amt-content a {
-    color: #02356a;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-
-/*color change of job search dropdown links*/
-.alpha-content a:hover, .amt-content a:hover {
-    background-color: #f1e9e7;
-}
-
-/*show job search drop down menus on click*/
-.alpha, .amt {
-    display: block;
-}
 
 /*job results div*/
 #jobs-results {

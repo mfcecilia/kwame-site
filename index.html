@@ -9,6 +9,7 @@
     
     <script src="index.js"></script>
     <script src="job-search.js"></script>
+    <script src="job-results.js"></script>
     
     
     <link rel="stylesheet" href="index.css">
@@ -78,7 +79,7 @@
         <h3>Search for what you want by filtering based on company name and/or number of contacts available per company.</h3>
 
         <p>The first button shows the companies with available contacts in alphabetical order.
-            <br>The second menu shows the list of companies in order of most contacts down to the least contacts. 
+            <br>The button shows the list of companies in order of most contacts down to the least contacts. 
             <br>As you select contacts, you can preview your order. When ready, click the "Purchase" button.
         </p>
         
@@ -134,13 +135,46 @@
         
             <div id="jobs-amounts">
                 
-                <button class="btn-amt" onclick="btn-amt()">Companies - Amount of Contacts</button>
+                <button class="btn-amt" id="jobs-amt-btn" onclick="amtBtnEvents()">Companies - Amount of Contacts</button>
                 
-                <div id="amt" class="amt-content">
+                <div id="jobs-amt-modal" class="jobs-modal">
                     
-                    <a href="#">dynamically populate with companies from excel</a>
-                    
-                </div>
+                    <div class="amt-modal-content">
+                        
+                        <div class="amt-modal-header">
+                            
+                            <span class="jobs-amt-close" onclick="amtClose()">&times;</span>
+                            <h2>List of Companies in order most contacts to least contacts</h2>  
+                            
+                        </div>
+                        
+                        <div class="amt-modal-body">
+                            
+                                <div id="amt-list-container" class="amt-list-container">
+                                    <fieldset>
+                                      <legend>Select the companies that appeal to you</legend>
+                                      <div>
+                                        <input type="checkbox" id="arqqo" name="company" value="coding">
+                                        <label for="arqqo">ARQQO : 4</label>
+                                      </div>
+                                      <div>
+                                        <input type="checkbox" id="woe" name="company" value="woe">
+                                        <label for="woe">WOE : 2</label>
+                                      </div>
+                                    </fieldset>
+                                </div>
+                
+                        </div>
+                            
+                        </div>
+                        
+                        <div class="amt-modal-footer" onclick="amtDone()">
+                        
+                            <h2>Done</h2>
+                            
+                        </div>
+                        
+                    </div>
                 
             </div>
         

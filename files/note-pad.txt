@@ -30,3 +30,6 @@ https://stackoverflow.com/questions/3007336/how-do-you-assign-a-javascript-oncli
 
 
 go back and add globals for variables that are repeated in js functions.
+
+
+add a reset button so that companies can be deselected all at once if they need to start over from the default settings.

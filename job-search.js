@@ -3,14 +3,6 @@
 /* jslint latedef:false*/
 
 
-/*
-* global variables
-*/
-
-//check if user clicks at all
-var clicked = document.addEventListener("click", window);
-
-
 
 /*
 *
@@ -118,12 +110,105 @@ function alphaDone() {
 
 
 
+/*
+*
+*
+*amount of contacts search
+*
+*
+*/
 
 
 
 
+/*
+*
+when the user clicks on the amount of contacts search button, open the modal to show company list.
+*
+*/
 
-//amount of contacts search
+function amtBtnEvents() {
+    'use strict';
+    
+    var jobsAmtBtn = document.getElementById("jobs-amt-btn");
+    
+    var jobsAmtModal = document.getElementById('jobs-amt-modal');
+    
+    //tell console we are inside the function
+    console.log("START amtBtnEvents function");
+    
+    //check if user has clicked the alpha job search button
+    if (jobsAmtBtn.addEventListener("click", jobsAmtBtn) !== null) {
+        //tell console we registered the button click and ready to proceed
+        console.log("...amount of contacts job search button click registered....");
+        
+        //say what the user clicked
+        
+        
+        //display the modal
+        jobsAmtModal.style.display = "block";
 
-// get the modal
-var modal = document.getElementById('jobs-amt-modal');
+        //opaque backdrop displayed
+
+        //tell console that all actions have completed successfully
+        console.log("END amtBtnEvents");
+    } else {
+        console.log("amtBtnEvents function to open the modal FAILED");
+    }
+}
+
+
+
+/*
+*
+when the user clicks on <span> (x), close the modal
+*
+*/
+
+function amtClose() {
+    'use strict';
+    
+    //tell console we are inside the function
+    console.log("START amtClose function");
+    
+    // get the modal
+    var jobsAmtModal = document.getElementById('jobs-amt-modal');
+    // get the <span> element that closes the modal
+    var jobsAmtClose = document.getElementsByClassName("jobs-amt-close")[0];
+    
+    if (jobsAmtClose.addEventListener("click", jobsAmtClose) !== null) {
+        
+        jobsAmtModal.style.display = "none";
+        
+        //opaque backdrop displayed
+        
+        console.log("...close amt of contacts job search button click registered...");
+    } else {
+        console.log("amtClose function to close the modal FAILED");
+    }
+    console.log("END amtClose");
+}
+
+
+/*
+*
+when user clicks "done at the end of the alphabetical company search modal, close the modal
+*
+*/
+
+function amtDone() {
+    'use strict';
+    
+    console.log("START amtDone function");
+    
+    var jobsAmtModal = document.getElementById('jobs-amt-modal');
+    var amtModalFooter = document.getElementById('amt-modal-footer');
+    
+    if (window.addEventListener("click", amtModalFooter) !== null) {
+        console.log("...done button in amt of contacts modal registered...");
+        jobsAmtModal.style.display = "none";
+    } else {
+        console.log("amtDone function FAILED");
+    }
+    console.log("END amtDone");
+}
