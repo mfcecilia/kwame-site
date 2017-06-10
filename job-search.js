@@ -22,27 +22,11 @@ var clicked = document.addEventListener("click", window);
 
 
 
-// get the search button that opens the modal
-var jobsAlphaBtn = document.getElementById("jobs-alpha-btn");
-
-//get modal for alphabetical job search
-var jobsAlphaModal = document.getElementById('jobs-alpha-modal');
-
-// get the <span> element that closes the modal
-var jobsAlphaClose = document.getElementsByClassName("jobs-alpha-close")[0];
-
-//check if user clicked the button to close the alpha job search modal
-var alphaCloseClick = jobsAlphaClose.onclick;
-
-
-
-
-
-
 
 /*
-* when the user clicks on the alphabetical search
-* button, open the modal to show company list.
+*
+when the user clicks on the alphabetical search button, open the modal to show company list.
+*
 */
 
 function alphaBtnEvents() {
@@ -69,40 +53,68 @@ function alphaBtnEvents() {
         //opaque backdrop displayed
 
         //tell console that all actions have completed successfully
-        console.log("the alphabetical job search button click actions are complete");
+        console.log("END alphaBtnEvents");
     } else {
-        console.log("alphaBtn function to open the modal FAILED");
+        console.log("alphaBtnEvents function to open the modal FAILED");
     }
 }
 
 
-// when the user clicks on <span> (x), close the modal
+
+/*
+*
+when the user clicks on <span> (x), close the modal
+*
+*/
+
 function alphaClose() {
     'use strict';
+    
+    //tell console we are inside the function
+    console.log("START alphaClose function");
+    
     // get the modal
-    var modal = document.getElementById('jobs-alpha-modal');
-    console.log("inside alphaClose function");
-    if (alphaCloseClick !== null) {
-        console.log("inside the close alpha job search button click check");
+    var jobsAlphaModal = document.getElementById('jobs-alpha-modal');
+    // get the <span> element that closes the modal
+    var jobsAlphaClose = document.getElementsByClassName("jobs-alpha-close")[0];
+    
+    if (jobsAlphaClose.addEventListener("click", jobsAlphaClose) !== null) {
+        
         jobsAlphaModal.style.display = "none";
         
         //opaque backdrop displayed
         
-        console.log("the close alpha job search button click was registered");
+        console.log("...close alpha job search button click registered...");
     } else {
-        console.log("the alphaClose function to close the modal has failed");
+        console.log("alphaClose function to close the modal FAILED");
     }
+    console.log("END alphaClose");
 }
 
-// when the user clicks anywhere outside of the modal, close it
-window.onclick = function (event) {
-    'use strict';
-    // get the modal
 
-    if (clicked === jobsAlphaModal) {
+/*
+*
+when user clicks "done at the end of the alphabetical company search modal, close the modal
+*
+*/
+
+function alphaDone() {
+    'use strict';
+    
+    console.log("START alphaDone function");
+    
+    var jobsAlphaModal = document.getElementById('jobs-alpha-modal');
+    var alphaModalFooter = document.getElementById('alpha-modal-footer');
+    
+    if (window.addEventListener("click", alphaModalFooter) !== null) {
+        console.log("...done button in alpha modal registered...");
         jobsAlphaModal.style.display = "none";
+    } else {
+        console.log("alphaDone function FAILED");
     }
-};
+    console.log("END alphaDone");
+}
+
 
 
 

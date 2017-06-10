@@ -43,6 +43,12 @@ p {
     margin: auto;
 } 
 
+.jobs-alpha-filter {
+    background: rgba(76, 175, 80, 0.3);
+    height: 100%;
+    
+}
+
 /*jobs modal */
 .jobs-modal {
     display: none; /*hidden by default*/
@@ -93,6 +99,7 @@ p {
     width: auto;
     background-color: #81aef1;
     color: white;
+    cursor: pointer;
 }
 
 /*the jobs alpha close button*/
