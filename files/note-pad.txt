@@ -27,3 +27,6 @@ Maybe the Modal box can have an anchored side bar with the ability to go back (e
 
 click event struggle:
 https://stackoverflow.com/questions/3007336/how-do-you-assign-a-javascript-onclick-attribute-dynamically
+
+
+go back and add globals for variables that are repeated in js functions.

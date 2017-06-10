@@ -9,11 +9,7 @@
     
     <script src="index.js"></script>
     <script src="job-search.js"></script>
-    <script src="contractors.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     
-    <!--google sheets contractors api key-->
-    <script src="https://spreadsheets.google.com/feeds/cells/AIzaSyCt0pkxd9kwF1a0vuG6jLgstdq81FGgPXI/1/public/values?alt=json-in-script&callback=doData"></script>
     
     <link rel="stylesheet" href="index.css">
     <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
@@ -81,12 +77,15 @@
         
         <h3>Search for what you want by filtering based on company name and/or number of contacts available per company.</h3>
 
-        <p>The first dropdown menu shows the companies with available contacts in alphabetical order. The second dropdown menu shows the list of companies in order of most contacts down to the least contacts. As you select contacts, you can preview your order. When ready, click the "Purchase" button.</p>
+        <p>The first button shows the companies with available contacts in alphabetical order.
+            <br>The second menu shows the list of companies in order of most contacts down to the least contacts. 
+            <br>As you select contacts, you can preview your order. When ready, click the "Purchase" button.
+        </p>
         
         
             <div id="jobs-alphabetical">
                 
-                <button id="jobs-alpha-btn" class="btn-alpha" name="jobs-alpha-btn" onclick="alphaBtn()" onclick="getExcelData()">Companies - Alphabetical Order</button>
+                <button id="jobs-alpha-btn" class="btn-alpha" onclick="alphaBtnEvents()" onclick="getExcelData()">Companies - Alphabetical Order</button>
                 
                 
                 <div id="jobs-alpha-modal" class="jobs-modal">
@@ -101,14 +100,19 @@
                         </div>
                         
                         <div class="alpha-modal-body">
-                        
-                            <p>Select the companies that appeal to you</p>
-                            
                             
                                 <div id="alpha-list-container" class="alpha-list-container">
-                    
-                                    <div id="data"/>
-                                    
+                                    <fieldset>
+                                      <legend>Select the companies that appeal to you</legend>
+                                      <div>
+                                        <input type="checkbox" id="arqqo" name="company" value="coding">
+                                        <label for="arqqo">ARQQO</label>
+                                      </div>
+                                      <div>
+                                        <input type="checkbox" id="woe" name="company" value="woe">
+                                        <label for="woe">WOE</label>
+                                      </div>
+                                    </fieldset>
                                 </div>
                 
                         </div>
@@ -117,7 +121,7 @@
                         
                         <div class="alpha-modal-footer">
                         
-                            <h2>Modal Footer</h2>
+                            <h2>Done</h2>
                             
                         </div>
                         

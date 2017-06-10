@@ -81,7 +81,9 @@ p {
 
 /*list of companies in alphabetical order*/
 .alpha-list-container {
-    padding: 2px 16px;
+    padding: 5%;
+    font-weight: bold;
+    font-size: 20px;
 }
 
 /*alpha modal footer*/
@@ -253,8 +255,6 @@ li a:hover {
     margin: 10px;
 }
 
-
-form {display: none;}
 
 table {border-collapse: collapse; width: 100%;}
   th, td {border: thin solid black; padding: 3px;}
