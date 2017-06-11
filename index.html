@@ -15,10 +15,6 @@
     <link rel="stylesheet" href="index.css">
     <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
     
-    <style type="text/css" media="print">
-        form {display: none;}
-    </style>
-    
     
     <title>Resources for Overseas Employment Opportunities</title>
     
@@ -86,7 +82,7 @@
         
             <div id="jobs-alphabetical">
                 
-                <button id="jobs-alpha-btn" class="btn-alpha" onclick="alphaBtnEvents()" onclick="getExcelData()">Companies - Alphabetical Order</button>
+                <button id="jobs-alpha-btn" class="btn-alpha" onclick="alphaBtnEvents()">Companies - Alphabetical Order</button>
                 
                 <div id="jobs-alpha-filter">
                 
@@ -101,17 +97,17 @@
                             
                         </div>
                         
-                        <div class="alpha-modal-body">
+                        <div class="alpha-modal-body" onclick="getAlphaChecks()" >
                             
                                 <div id="alpha-list-container" class="alpha-list-container">
                                     <fieldset>
                                       <legend>Select the companies that appeal to you</legend>
                                       <div>
-                                        <input type="checkbox" id="arqqo" name="company" value="coding">
+                                        <input class="alphaCheckbox" type="checkbox" id="arqqo" name="company" value="arqqo">
                                         <label for="arqqo">ARQQO</label>
                                       </div>
                                       <div>
-                                        <input type="checkbox" id="woe" name="company" value="woe">
+                                        <input class="alphaCheckbox" type="checkbox" id="woe" name="company" value="woe">
                                         <label for="woe">WOE</label>
                                       </div>
                                     </fieldset>

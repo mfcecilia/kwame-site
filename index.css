@@ -59,7 +59,6 @@ p {
     box-shadow: 20px 20px 15px #888888;
     opacity: 0.8;
     filter: alpha(opacity=50); /* For IE8 and earlier */
-    margin: 5%;
     border-radius: 20px;
 }
 
