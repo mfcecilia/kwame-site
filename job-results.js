@@ -7,122 +7,142 @@
 /*
 *
 *
-*job search results
+*job search results javascript mechanics
 *
 *
 */
 
 
-
-
-/*
-*
-as user selects and deselects companies, the results will modify to reflect the changes
-*
-*/
-
-
-
-
+/* globals to track user history*/
+var prevAlphaSelection;
 
 /*
 *
-when the user selects companies, they appear as a preview to review before purchasing
+when the user selects companies, they appear as a preview to review before purchasing.
+as the user selects and deselects companies, the results will modify to reflect the changes.
 *
 */
 
 function getAlphaChecks() {
     'use strict';
     
-    var checkedValue;
-    var alphaChecks = document.getElementsByClassName('alphaCheckbox');
-    var jobsAlphaModal = document.getElementById('jobs-alpha-modal');
-    var resultPreview = document.getElementById('result-preview');
-    
-    var a = resultPreview.childElementCount; //number of items in result
-    //var parseResult = resultPreview.getElementsByTagName("br")[0].textContent;
-    var resultTag = '<br>';
-    
+    //VARS
+    var a = 0;
     var i = 0;
-    var j = 0;
     
-    var currAlphaChecked = alphaChecks[i].checked;
-    var currAlphaChecksVal = alphaChecks[i].value;
+    //RESULT ARRAY
+    var resultItems = document.getElementsByClassName('result-view');
+    var resultFind = document.getElementsByClassName("result-view")[a];
+    var getResults = resultFind.getElementsByTagName("br");
+    var resultChild = resultItems[a].getElementsByClassName('result-view')[a];
+    var resultDivId = document.getElementById('result-preview');
+    var resultTag = document.createElement("br");
+    var resultObj = resultItems[a];
     
-    //tell console we are inside the function
+    //CHECKBOX ARRAY
+    var alphaChecks = document.getElementsByClassName('alpha-checkbox');
+    var alphaCheckbox = alphaChecks[i]; //no return value
+    var checkedValue = alphaCheckbox.checked; //true or false
+    var currAlphaCheckVal = alphaCheckbox.value; //string
+    
+    
+    //BEGIN ANALYZING
     console.log("START getAlphaChecks function");
 
-    for (i = 0; alphaChecks[i]; i++) { //iterate through checkboxes
-        console.log("...inside alphaChecks for loop... " + i);
-        console.log(resultPreview.innerHTML);
-        if (resultPreview.innerHTML === "") {
-            console.log("are there already results showing? ...NO");
-        }
-        if (checkedValue === null) {
-            console.log("are there already previously stored checkedValues? ...NO");
-        }
+    //CHECKBOX FOR LOOP
+    for (i = 0; alphaChecks[i]; ++i) {
         
-        if (checkedValue) { //if there are items in the result view
-            console.log("now showing current result preview contents: " + resultPreview.innerHTML); //print them
-            //if the current check box we are analyzing is not the same as the previously added value
-            if (checkedValue !== currAlphaChecksVal) {
-                //iterate through those existing in the results preview
-                for (j = 0; resultPreview.innerHTML[j]; j++) {
-                    console.log("..inside resultPreview.innerHTML for loop... " + j);
-                    //if item is already shown
-                    if (resultPreview.innerHTML[j] === currAlphaChecksVal + resultTag) {
-                        console.log("resultPreview.innerHTML[j]: " + resultPreview.innerHTML[j]); //print existing
-                        console.log("...cannot add currAlphaChecksVal: " + currAlphaChecksVal);
-                        console.log("resultPreview.innerHTML[j] === alphaChecks[i].value + resultTag ...continue checking...");
-                        j++;
-                        console.log("checking next result shown. innter html counter just increased to: " + i);
-                        //if the item is not already shown
-                    } else {
-                        //add to the results view
-                        resultPreview.innerHTML += currAlphaChecksVal + resultTag;
-                        console.log("...ADDING TO RESULT item to result view..." + currAlphaChecksVal);
-                        checkedValue = currAlphaChecksVal; //checkedValue now stores that checked value
-                        break;
-                    }
-                }
+        console.log("...inside alphaCheckbox FOR loop... " + i);
+
+        console.log("...now analyzing current checkbox: " + currAlphaCheckVal);
+        
+        /*RESULT VIEW IS EMPTY*/
+        if (resultDivId.innerHTML === "") {
+            console.log("...result view is empty... : " + resultDivId.innerHTML);
+            /*CURRENT BOX CHECKED*/
+            if (checkedValue) {
+                console.log(currAlphaCheckVal + " is selected...(current checkbox value)...");
+                
+                console.log("...ADDING TO RESULT view...: " + currAlphaCheckVal);
+                var newText = document.createTextNode(currAlphaCheckVal);
+                resultTag = resultTag.appendChild(newText);//append txt node
+                console.log("resultTag = ", resultTag); //check output
+                
+                resultDivId.appendChild(resultTag);//add to result view
+                
+                
+                prevAlphaSelection = alphaChecks[i].value;
+                console.log("...recording user selection history: " + prevAlphaSelection + " ...added...");
+                
+                console.log("results now include: " + resultDivId.innerHTML);
+                console.log("...this current alphaCheckbox loop #: " + i + " is now ending...");
+                i++;
+                /*CURRENT BOX UNCHECKED*/
+            } else {
+                console.log("...result view empty AND current box is unchecked...nothing to do here...");
+                console.log("...this current alphaCheckbox loop #: " + i + " is now ending...");
             }
             
-        } else if ((currAlphaChecked === true) && (resultPreview.innerHTML === null) && (checkedValue !== null)) { //if result view is empty when something is checked
-            console.log("...ADDING TO RESULT alphaChecks[i].value: " + currAlphaChecksVal); //print the item to add
-            checkedValue = currAlphaChecksVal; //checkedValue stores that checked value
-            console.log("...checkedValue now storing... " + currAlphaChecksVal);
-            resultPreview.innerHTML += alphaChecks[i].value + '<br>'; //show that value in the result view
+        /*RESULT VIEW IS NOT EMPTY*/
+        } else if (resultDivId.innerHTML !== "") {
+            console.log("...result view is not empty... : " + resultDivId.innerHTML);
             
-            //else if checked value doesn't equal last checked
-        } else if ((currAlphaChecksVal !== checkedValue) && (currAlphaChecked === true)) {
-            //print the item to add
-            console.log("...ADDING TO RESULT VIEW alphaChecks[i].value: " + alphaChecks[i].value);
-            checkedValue = currAlphaChecksVal; //checkedValue now stores the current checked value
-            resultPreview.innerHTML += currAlphaChecksVal + '<br>'; //show that value in the result view
             
-        } else if (alphaChecks[i].value === null) {
-            console.log("...NOTHING here, alphaChecks[i].value is null");
-            
-            //if something is checked and something has already been added right before and those 2 are not equal
-        } else if ((checkedValue !== null) && (currAlphaChecked) && (checkedValue !== currAlphaChecked)) {
-            console.log("...ADDING TO RESULT view... " + currAlphaChecksVal);
+            //RESULT VIEW FOR LOOP
+            for (a = 0; resultItems[a]; a++) {
+                console.log("...inside resultItems FOR loop... " + a);
+                console.log("...now analyzing this resultObj value: " + resultItems[a].innerHTML);
+                
+                /*CURRENT CHECKBOX CHECKED*/
+                /*CURRENT CHECKBOX EQUALS RESULT VAL*/
+                if (checkedValue && (currAlphaCheckVal === resultItems[a].innerHTML)) {
+                    //do nothing
+                    console.log("...cannot add currAlphaCheckVal: " + currAlphaCheckVal + " if resultVal exists: " + resultItems[a].innerHTML);
+                    console.log("...this current resultItems loop #: " + a + " is now ending...");
+                    
+                /*CURRENT CHECKBOX UNCHECKED*/
+                /*CURRENT CHECKBOX EQUALS RESULT VAL*/
+                } else if (!checkedValue && (currAlphaCheckVal === resultItems[a].innerHTML)) {
+                    //remove it
+                    console.log("...removing resultVal " + resultItems[a].innerHTML + " because currAlphaCheckVal " + currAlphaCheckVal + " is not checked...");
+                    resultDivId.removeChild(resultItems[a]);
+                    console.log("...this current resultItems loop #: " + a + " is now ending...");
+                } else {
+                    console.log("not sure what other checks i need, so I'm ADDING currAlphaCheckVal: " + currAlphaCheckVal + " to result view....");
+                    resultTag.innerHTML = currAlphaCheckVal;
+                    resultDivId.appendChild(resultTag);
+                }
+                console.log("...this current resultItems loop #: " + a + " is now ending...");
+            }
+            console.log("EXITING resultObj FOR loop");
+            //might need else if for results empty and box unchecked
         } else {
-            console.log("something might be wrong inside getAlphChecks() function");
+            console.log("something might be wrong inside getAlphChecks() function OR i just don't have all the right if statements");
         }
-    }
-    
-    console.log("...FUNCTION ENDING...");
-    console.log("...end of function number of items in result preview: " + a);
-    
-    console.log("...end of function result preview contents: " + resultPreview.innerHTML); //print them
-    
-    //prints the value of the last checkbox that was checked by the user
-    console.log("...end of function last checked value: " + checkedValue);
-    if (currAlphaChecksVal !== null) {
-        console.log("...end of function alphaChecks[i] value: " + currAlphaChecksVal);
-    }
-    
+        console.log("...this current alphaChecks loop #: " + a + " is now ending...");
         
-    //tell console that all actions have completed successfully
+    }
+    
+    console.log("EXITING alphaChecks loop...getAlphaChecks FUNCTION ENDING...");
+    
+    
+    /*summary of the function events*/
+    if (resultDivId !== "") {
+        console.log("...function ending number of items in result preview: " + resultDivId.childElementCount);
+        console.log("...function ending result preview contents: " + resultDivId.innerHTML);
+    } else {
+        console.log("...function ending... nothing in result view");
+    }
+    
+    
+    if (checkedValue) {
+        console.log("...function ending... alphaChecks[i].value is currently checked: " + currAlphaCheckVal);
+    } else {
+        console.log("...function ending... done analyzing the unchecked alphaChecks[i] value: " + currAlphaCheckVal);
+        console.log("...function ending... previously acted upon by user: " + prevAlphaSelection);
+    }
+    
     console.log("END getAlphaChecks");
 }
+
+/*function getAlphaUnchecks()*/

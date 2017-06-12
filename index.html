@@ -97,17 +97,17 @@
                             
                         </div>
                         
-                        <div class="alpha-modal-body" onclick="getAlphaChecks()" >
+                        <div class="alpha-modal-body">
                             
                                 <div id="alpha-list-container" class="alpha-list-container">
                                     <fieldset>
                                       <legend>Select the companies that appeal to you</legend>
                                       <div>
-                                        <input class="alphaCheckbox" type="checkbox" id="arqqo" name="company" value="arqqo">
+                                        <input onclick="getAlphaChecks()" class="alpha-checkbox" type="checkbox" id="arqqo" name="company" value="arqqo">
                                         <label for="arqqo">ARQQO</label>
                                       </div>
                                       <div>
-                                        <input class="alphaCheckbox" type="checkbox" id="woe" name="company" value="woe">
+                                        <input onclick="getAlphaChecks()" class="alpha-checkbox" type="checkbox" id="woe" name="company" value="woe">
                                         <label for="woe">WOE</label>
                                       </div>
                                     </fieldset>
@@ -179,8 +179,8 @@
             <h3>Results</h3>
                 <p>Your search results will appear here. When you are satisfied with your selections, click "Purchase"</p>
             
-        <div id="result-preview"></div>
-            
+            <div id="result-preview" class="result-view"></div>
+        
         </div>
         
         
