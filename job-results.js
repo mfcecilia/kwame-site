@@ -76,7 +76,6 @@ function getAlphaChecks() {
                 
                 console.log("results now include: " + resultDivId.innerHTML);
                 console.log("...this current alphaCheckbox loop #: " + i + " is now ending...");
-                i++;
                 /*CURRENT BOX UNCHECKED*/
             } else {
                 console.log("...result view empty AND current box is unchecked...nothing to do here...");

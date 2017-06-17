@@ -37,3 +37,5 @@ add a reset button so that companies can be deselected all at once if they need 
 add ability to have the companies list scroll and/or be arranged in columns so that the modals don't take up too much space.
 
 add ability to click outside modal to close it.
+
+make it work on mobile. include an faq that mentions that mobile has not yet been developed, but if you want to see it happen, vote here....or something like that.

@@ -22,6 +22,11 @@ p {
     text-align: center;
 }
 
+#how-url {
+    color: #02356a;
+    text-decoration: none;
+}
+
 /*specific to the job search div*/
 .jobs {
     text-align: center;
@@ -37,11 +42,19 @@ p {
     transition: 0.2s;
 }
 
+#jobs-instr {
+    color: #81aef1;
+}
+
 /*jobs dropdown button positions*/
 #jobs #jobs-alphabetical, #jobs #jobs-amounts {
     padding: inherit;
     margin: auto;
 } 
+
+#jobs-alphabetical, #jobs-amounts {
+    background-color: #fafafa;
+}
 
 .jobs-alpha-filter {
     background: rgba(76, 175, 80, 0.3);
@@ -153,9 +166,14 @@ p {
     
 }
 
+
+#result-instr {
+    color: #81aef1;
+}
+
 /*search result preview window*/
 #result-preview {
-    
+    background-color: #fafafa;
 }
 
 /*purchase button*/
