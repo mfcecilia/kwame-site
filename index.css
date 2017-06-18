@@ -80,7 +80,15 @@ p {
     padding: 2px 16px;
     background-color: #81aef1;
     color: white;
+    cursor: pointer;
 }
+
+.alpha-modal-header:hover, .amt-modal-header:hover {
+    background-color:firebrick;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+
 
 /*alpha modal body*/
 .alpha-modal-body, .amt-modal-body {

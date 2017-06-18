@@ -74,7 +74,7 @@
         
         <h1>Jobs</h1>
         
-        <h3>Search for and select what you want by either filtering companies alphabetically and/or by number of contacts available per company.</h3>
+        <h3>Search for and select whose contacts you want by either filtering companies alphabetically and/or by number of contacts available per company.</h3>
 
         <p id="jobs-instr">The first button shows the companies with available contacts in alphabetical order.
             <br>The button shows the list of companies in order of most contacts down to the least contacts. 
@@ -95,7 +95,7 @@
                         <div class="alpha-modal-header">
                             
                             <span class="jobs-alpha-close" onclick="alphaClose()">&times;</span>
-                            <h2>List of Companies in Alphabetical order</h2>  
+                            <h2 onclick="alphaReset()">Reset</h2>  
                             
                         </div>
                         
@@ -105,11 +105,15 @@
                                     <fieldset>
                                       <legend>Select the companies that appeal to you</legend>
                                       <div>
-                                        <input onclick="getAlphaChecks()" class="alpha-checkbox" type="checkbox" id="arqqo" name="company" value="arqqo">
+                                        <input class="alpha-checkbox" type="checkbox" id="arqqo" name="company" value="arqqo">
                                         <label for="arqqo">ARQQO</label>
                                       </div>
+                                        <div>
+                                        <input class="alpha-checkbox" type="checkbox" id="google" name="company" value="google">
+                                        <label for="google">Google</label>
+                                      </div>
                                       <div>
-                                        <input onclick="getAlphaChecks()" class="alpha-checkbox" type="checkbox" id="woe" name="company" value="woe">
+                                        <input class="alpha-checkbox" type="checkbox" id="woe" name="company" value="woe">
                                         <label for="woe">WOE</label>
                                       </div>
                                     </fieldset>
@@ -119,9 +123,11 @@
                             
                         </div>
                         
-                        <div class="alpha-modal-footer" onclick="alphaDone()">
+                        <div class="alpha-modal-footer" onclick="alphaSave()">
+                            
+                            <span class="jobs-alpha-save"></span>
                         
-                            <h2>Done</h2>
+                            <h2>Save</h2>
                             
                         </div>
                         
@@ -151,8 +157,12 @@
                                 <div id="amt-list-container" class="amt-list-container">
                                     <fieldset>
                                       <legend>Select the companies that appeal to you</legend>
+                                        <div>
+                                        <input type="checkbox" id="google" name="company" value="google">
+                                        <label for="google">Google : 20</label>
+                                      </div>
                                       <div>
-                                        <input type="checkbox" id="arqqo" name="company" value="coding">
+                                        <input type="checkbox" id="arqqo" name="company" value="arqqo">
                                         <label for="arqqo">ARQQO : 4</label>
                                       </div>
                                       <div>
@@ -181,7 +191,9 @@
             <h3>Results</h3>
                 <p id="result-instr">Your search results will appear here. When you are satisfied with your selections, click "Purchase"</p>
             
-            <div id="result-preview" class="result-view">fjekls</div>
+            <div id="result-preview" class="result-view">
+            <div class="result-item"></div>
+            </div>
         
         </div>
         
