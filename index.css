@@ -85,7 +85,7 @@ p {
 }
 
 /* Tooltip text */
-#alpha-tooltips .alpha-reset-tip-txt {
+#alpha-tooltips .alpha-reset-tip-txt, #amt-tooltips .amt-reset-tip-txt {
     visibility: hidden;
     width: auto;
     background-color: #555;
@@ -108,7 +108,7 @@ p {
 }
 
 /* Tooltip arrow */
-#alpha-tooltips .alpha-reset-tip-txt::after {
+#alpha-tooltips .alpha-reset-tip-txt::after , #amt-tooltips .amt-reset-tip-txt::after {
     content: "";
     position: absolute;
     top: 100%;
@@ -119,7 +119,7 @@ p {
 }
 
 /* Show the tooltip text when you mouse over the tooltip container */
-#alpha-tooltips:hover .alpha-reset-tip-txt {
+#alpha-tooltips:hover .alpha-reset-tip-txt, #amt-tooltips:hover .amt-reset-tip-txt {
     visibility: visible;
     opacity: 1;
 }

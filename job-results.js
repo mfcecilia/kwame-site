@@ -51,6 +51,47 @@ function clrAlphaResults() {
     } else {
         console.log("clrAlphaResults button click not registered");
     }
+}
+
+
+
+
+function clrAmtResults() {
+    'use strict';
+    console.log("START clrAmtResults");
     
-    //note to user that their items were removed from the results
+    //store reset header
+    var jobsAmtReset = document.getElementsByClassName("amt-modal-header")[0];
+    //store checkbox class
+    var amtXboxes = document.getElementsByClassName('amt-checkbox');
+    //results elements
+    var resultView = document.getElementsByClassName('result-view');
+    var resultItem = document.getElementsByClassName('result-item');
+    
+    //on reset button click
+    if (jobsAmtReset.addEventListener("click", jobsAmtReset) !== null) {
+        console.log("...clear amt job search results button click registered...");
+        
+        var j = 0;
+        
+        //iterate over checkboxes
+        for (j; j < amtXboxes.length; j++) {
+            if (amtXboxes[j].checked === false) {
+                console.log("analyzing unchecked amt value: " + amtXboxes[j].value);
+                
+                var b = 0;
+
+                //iterate over results and delete matches
+                for (b; b < resultItem.length; b++) {
+                    if (amtXboxes[j].value === resultItem[b].innerHTML) {
+                        console.log("found match, now removing...: " + resultItem[b].innerHTML);
+                        document.getElementById('result-preview').removeChild(resultItem[b]);
+                    }
+                }
+            }
+        }
+        
+    } else {
+        console.log("clrAmtResults button click not registered");
+    }
 }

@@ -10,6 +10,8 @@
     <script src="index.js"></script>
     <script src="job-search.js"></script>
     <script src="job-results.js"></script>
+    <script src="contractors.js"></script>
+    
     
     
     <link rel="stylesheet" href="index.css">
@@ -84,7 +86,7 @@
         
             <div id="jobs-alphabetical">
                 
-                <button id="jobs-alpha-btn" class="btn-alpha" onclick="alphaBtnEvents()">Companies - Alphabetical Order</button>
+                <button id="jobs-alpha-btn" class="btn-alpha" onclick="alphaBtnEvents(); loadXMLDoc();">Companies - Alphabetical Order</button>
                 
                 <div id="jobs-alpha-modal" class="jobs-modal">
                     
@@ -149,7 +151,9 @@
                         <div class="amt-modal-header">
                             
                             <span class="jobs-amt-close" onclick="amtClose()">&times;</span>
-                            <h2 onclick="amtReset()">Reset</h2>  
+                            <h2  id="amt-tooltips" onclick="amtReset(); clrAmtResults();">Reset
+                                <span class="amt-reset-tip-txt">Click "Reset" to deselect these choices and clear them from your results</span>
+                            </h2>  
                             
                         </div>
                         
