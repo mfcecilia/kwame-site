@@ -86,8 +86,6 @@ function alphaReset() {
             }
         }
         
-        //clear alpha search items from result preview
-        
         console.log("...reset alpha job search button click registered...");
     } else {
         console.log("alphaReset function to close the modal FAILED");
@@ -381,5 +379,7 @@ function amtReset() {
     } else {
         console.log("amtReset function to close the modal FAILED");
     }
+    //close modal
+    jobsAmtModal.style.display = "none";
     console.log("END amtReset");
 }
