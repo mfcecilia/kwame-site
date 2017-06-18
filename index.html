@@ -86,8 +86,6 @@
                 
                 <button id="jobs-alpha-btn" class="btn-alpha" onclick="alphaBtnEvents()">Companies - Alphabetical Order</button>
                 
-                <div id="jobs-alpha-filter">
-                
                 <div id="jobs-alpha-modal" class="jobs-modal">
                     
                     <div class="alpha-modal-content">
@@ -95,7 +93,10 @@
                         <div class="alpha-modal-header">
                             
                             <span class="jobs-alpha-close" onclick="alphaClose()">&times;</span>
-                            <h2 onclick="alphaReset()">Reset</h2>  
+                                
+                            <h2 onclick="alphaReset(); clrAlphaResults();">Reset</h2>
+                            
+                            <span class="alpha-reset-tip">Click here to deselect your choices and clear them from your results</span>
                             
                         </div>
                         
@@ -133,8 +134,6 @@
                         
                     </div>
                     
-                    </div>
-                    
                 </div>
         
             <div id="jobs-amounts">
@@ -148,7 +147,7 @@
                         <div class="amt-modal-header">
                             
                             <span class="jobs-amt-close" onclick="amtClose()">&times;</span>
-                            <h2>List of Companies in order most contacts to least contacts</h2>  
+                            <h2 onclick="amtReset()">Reset</h2>  
                             
                         </div>
                         
@@ -158,15 +157,15 @@
                                     <fieldset>
                                       <legend>Select the companies that appeal to you</legend>
                                         <div>
-                                        <input type="checkbox" id="google" name="company" value="google">
+                                        <input class="amt-checkbox" type="checkbox" id="google" name="company" value="google">
                                         <label for="google">Google : 20</label>
                                       </div>
                                       <div>
-                                        <input type="checkbox" id="arqqo" name="company" value="arqqo">
+                                        <input class="amt-checkbox" type="checkbox" id="arqqo" name="company" value="arqqo">
                                         <label for="arqqo">ARQQO : 4</label>
                                       </div>
                                       <div>
-                                        <input type="checkbox" id="woe" name="company" value="woe">
+                                        <input class="amt-checkbox" type="checkbox" id="woe" name="company" value="woe">
                                         <label for="woe">WOE : 2</label>
                                       </div>
                                     </fieldset>
@@ -176,9 +175,11 @@
                             
                         </div>
                         
-                        <div class="amt-modal-footer" onclick="amtDone()">
+                        <div class="amt-modal-footer" onclick="amtSave()">
+                            
+                            <span class="jobs-amt-save"></span>
                         
-                            <h2>Done</h2>
+                            <h2>Save</h2>
                             
                         </div>
                         
