@@ -92,6 +92,8 @@ function alphaReset() {
     } else {
         console.log("alphaReset function to close the modal FAILED");
     }
+    //close modal
+    jobsAlphaModal.style.display = "none";
     console.log("END alphaReset");
 }
 
