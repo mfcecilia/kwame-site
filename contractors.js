@@ -7,17 +7,17 @@
 /*
 *
 *
-*xml DOM http requests
+*XML http request
 *
 *
 */
 
-function loadXMLDoc() {
+function loadAlphaXML() {
     'use strict';
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function () {
         if (this.readyState === 4 && this.status === 200) {
-            myFunction(this);
+            alphaContractors(this);
             console.log("loading xml doc");
         }
     };
@@ -25,29 +25,17 @@ function loadXMLDoc() {
     xmlhttp.send();
 }
 
-function myFunction(xml) {
+function alphaContractors(xml) {
     'use strict';
     var x, i, xmlDoc, txt;
     xmlDoc = xml.responseXML;
     txt = "";
-    x = xmlDoc.getElementsByTagName("Data");
+    x = xmlDoc.getElementsByTagName("Worksheet")[1].getElementsByTagName("Row");
+
+    
     for (i = 0; i < x.length; i++) {
-        txt += x[i].childNodes[0].nodeValue + "<br>";
+        txt += x[i].childNodes[1].textContent + "<br>";
     }
+    console.log("x.length = " + x.length);
     document.getElementById("alpha-list-container").innerHTML = txt;
 }
-
-/*
-*
-*
-*get excel sheet
-*
-*
-
-function getAlphaExcel(xml) {
-    'use strict';
-    var xmlDoc = xml.responseXML;
-    var x = parser.documentElement.childNodes;
-    document.getElementById("alpha-list-container").innerHTML =
-        xmlDoc.getElementsByTagName("Cell")[0].childNodes[0].nodeValue;
-}*/
