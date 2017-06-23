@@ -28,6 +28,13 @@ function alphaContractors(xml) {
 }
 
 
+/*
+*
+*
+*parse contractor xml into html alpha modal
+*
+*
+*/
 
 function loadAlphaXML() {
     'use strict';
@@ -48,26 +55,47 @@ function loadAlphaXML() {
 /*
 *
 *
-*XML http request for amt search
+*parse contractor xml into html amt modal
 *
 *
 */
 
 function amtContractors(xml) {
     'use strict';
-    var x, i, xmlDoc, txt;
+    var x, numContacts, i, xmlDoc, txt; //need to figure out numContacts
+    var contactCount; //2d array to track company and number of duplicates (contacts)
     xmlDoc = xml.responseXML;
     txt = "";
-    x = xmlDoc.getElementsByTagName("Worksheet")[1].getElementsByTagName("Row");
+    //variable to store "row" tags
+    x = xmlDoc.getElementsByTagName("Worksheet")[0].getElementsByTagName("Row");
 
-    
-    for (i = 0; i < x.length; i++) {
-        txt += x[i].childNodes[1].textContent + "<br>";
+    //iterate each row
+    for (i = 1; i < x.length; i++) {
+        if (x[i].childElementCount === 6) {
+            console.log("row child count = " + x[i].childElementCount);
+            console.log("adding.... " + x[i].getElementsByTagName("Cell")[4].childNodes[0].textContent);
+            txt += x[i].getElementsByTagName("Cell")[4].childNodes[0].textContent + "<br>";
+        } else if (x[i].childElementCount === 5) {
+            console.log("row child count = " + x[i].childElementCount);
+            console.log("adding.... " + x[i].getElementsByTagName("Cell")[3].childNodes[0].textContent);
+            txt += x[i].getElementsByTagName("Cell")[3].childNodes[0].textContent + "<br>";
+        } else {
+            console.log("could not add child node");
+        }
     }
     console.log("x.length = " + x.length);
-    document.getElementById("alpha-list-container").innerHTML = txt;
+    document.getElementById("amt-list-container").innerHTML = txt;
 }
 
+
+
+/*
+*
+*
+*XML http request for amt search
+*
+*
+*/
 
 function loadAmtXML() {
     'use strict';
