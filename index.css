@@ -101,16 +101,6 @@ p {
     transition: opacity 1s;
 }
 
-/* Tooltip arrow */
-#alpha-tooltips .alpha-reset-tip-txt::after , #amt-tooltips .amt-reset-tip-txt::after {
-    content: "";
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    border-width: 5px;
-    border-style: solid;
-    border-color: #555 transparent transparent transparent;
-}
 
 /* Show the tooltip text when you mouse over the tooltip container */
 #alpha-tooltips:hover .alpha-reset-tip-txt, #amt-tooltips:hover .amt-reset-tip-txt {
