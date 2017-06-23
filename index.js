@@ -3,27 +3,14 @@
 
 
 
-/*
-Global variables
-*/
-var menuItems = document.getElementsByTagName("A");
-var i = 0;
-
-
-
-/*
-Cycle through menu items and print them to the console.
-*/
-function printMenu() {
-    'use strict';
-    while (i < menuItems.length) {
-        console.log(menuItems[i].innerHTML);
-        i = i + 1;
-    }
-}
-
-
-/*
-job search modal logic
-*/
-
+/********************
+*
+*
+node js functions
+web server
+continuous functions
+npm
+scripts
+*
+*
+*********************/
