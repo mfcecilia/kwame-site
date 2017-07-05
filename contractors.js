@@ -51,48 +51,20 @@ function loadAlphaXML() {
 
 
 
-
 /*
-*
-*
-*parse contractor xml into html amt modal
-*
-*
+*print amt array to console
 */
-
-function amtContractors(xml) {
+function printArr(arr) {
     'use strict';
-    var x, y, i, xmlDoc, txt;
-    xmlDoc = xml.responseXML;
-    txt = "";
+    var j, k, l;
     
-    //variable to store "row" tags
-    x = xmlDoc.getElementsByTagName("Worksheet")[0].getElementsByTagName("Row");
-
-    //iterate each row
-    for (i = 1; i < x.length; i++) {
-        if (x[i].childElementCount === 6) {
-            y = x[i].getElementsByTagName("Cell")[4].childNodes[0].textContent + "<br>";
-            //numContacts(y, x.length, i)
-            console.log("row child count = " + x[i].childElementCount);
-            console.log("adding.... " + x[i].getElementsByTagName("Cell")[4].childNodes[0].textContent);
-            txt += x[i].getElementsByTagName("Cell")[4].childNodes[0].textContent + "<br>";
-        } else if (x[i].childElementCount === 5) {
-            y = x[i].getElementsByTagName("Cell")[3].childNodes[0].textContent + "<br>";
-            //numContacts(y, x.length, i)
-            console.log("row child count = " + x[i].childElementCount);
-            console.log("adding.... " + x[i].getElementsByTagName("Cell")[3].childNodes[0].textContent);
-            txt += x[i].getElementsByTagName("Cell")[3].childNodes[0].textContent + "<br>";
-            
-        } else {
-            console.log("could not add child node");
+    for (j = 0; j < arr.length; j++) {
+        console.log("row: " + j);
+        for (k = 0; k < arr[j].length; k++) {
+            console.log("cols: " + arr[j][k]);
         }
     }
-    console.log("x.length = " + x.length);
-    document.getElementById("amt-list-container").innerHTML = txt;
 }
-
-
 
 
 /*
@@ -115,15 +87,17 @@ function numContacts(num, amt, count) {
     var c; //zero
     
     //2d array to count the amount of contacts per company
-    var arrAmt = [];
+    var arrAmt = [0][0];
     
     //only check if there are already items have have been added
     if (count > 1) {
         for (a = 0; a < arrAmt.length; a++) {
+            printArr(arrAmt);
             //check if the current item is already in arrAmt[][]
             if (arrAmt[a][b] === num) {
                 //check if there are multiple columns already
                 if (arrAmt[a] > 0) {
+                    arrAmt[a].push(num);
                 //find the next empty column
                 //or avoid this check and see if there's a push method to add to beginning instead of end
                 //add to column in arrAmt
@@ -136,9 +110,53 @@ function numContacts(num, amt, count) {
         }
     } else {
         //add current item being analyzed to arrAmt[i][a] if it is the first in the xml
-        arrAmt[count][c] = num;
+        arrAmt[count][0] = num;
     }
 }
+
+
+
+/*
+*
+*
+*parse contractor xml into html amt modal
+*
+*
+*/
+
+function amtContractors(xml) {
+    'use strict';
+    var x, y, i, xmlDoc, txt;
+    xmlDoc = xml.responseXML;
+    txt = "";
+    
+    //variable to store "row" tags
+    x = xmlDoc.getElementsByTagName("Worksheet")[0].getElementsByTagName("Row");
+
+    //iterate each row
+    for (i = 1; i < x.length; i++) {
+        if (x[i].childElementCount === 6) {
+            y = x[i].getElementsByTagName("Cell")[4].childNodes[0].textContent + "<br>";
+            numContacts(y, x.length, i);
+            console.log("row child count = " + x[i].childElementCount);
+            console.log("adding.... " + x[i].getElementsByTagName("Cell")[4].childNodes[0].textContent);
+            txt += x[i].getElementsByTagName("Cell")[4].childNodes[0].textContent + "<br>";
+        } else if (x[i].childElementCount === 5) {
+            y = x[i].getElementsByTagName("Cell")[3].childNodes[0].textContent + "<br>";
+            numContacts(y, x.length, i);
+            console.log("row child count = " + x[i].childElementCount);
+            console.log("adding.... " + x[i].getElementsByTagName("Cell")[3].childNodes[0].textContent);
+            txt += x[i].getElementsByTagName("Cell")[3].childNodes[0].textContent + "<br>";
+            
+        } else {
+            console.log("could not add child node");
+        }
+    }
+    console.log("x.length = " + x.length);
+    document.getElementById("amt-list-container").innerHTML = txt;
+}
+
+
 
 /*
 *
