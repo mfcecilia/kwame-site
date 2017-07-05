@@ -27,6 +27,10 @@ p {
     text-decoration: none;
 }
 
+#how-img {
+    width: 95%;
+}
+
 /*specific to the job search div*/
 .jobs {
     text-align: center;
