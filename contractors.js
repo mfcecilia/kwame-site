@@ -3,7 +3,6 @@
 /* jslint latedef:false*/
 
 
-
 /*
 *
 *
@@ -71,9 +70,7 @@ function printArr(arr) {
 *
 *
 *count number of contacts each company has
-*
-*
-*/
+
 
 function numContacts(num, amt, count) {
     'use strict';
@@ -113,6 +110,9 @@ function numContacts(num, amt, count) {
         arrAmt[count][0] = num;
     }
 }
+*
+*
+*/
 
 
 
@@ -129,21 +129,54 @@ function amtContractors(xml) {
     var x, y, i, xmlDoc, txt;
     xmlDoc = xml.responseXML;
     txt = "";
+    var amtArr = [];
+    var cols = 100;
+    var a;
+    
+    //init the 2d array
+    for (a = 0; a < cols; a++) {
+        amtArr[a] = [];
+    }
     
     //variable to store "row" tags
     x = xmlDoc.getElementsByTagName("Worksheet")[0].getElementsByTagName("Row");
 
     //iterate each row
     for (i = 1; i < x.length; i++) {
+        
         if (x[i].childElementCount === 6) {
-            y = x[i].getElementsByTagName("Cell")[4].childNodes[0].textContent + "<br>";
-            numContacts(y, x.length, i);
-            console.log("row child count = " + x[i].childElementCount);
-            console.log("adding.... " + x[i].getElementsByTagName("Cell")[4].childNodes[0].textContent);
-            txt += x[i].getElementsByTagName("Cell")[4].childNodes[0].textContent + "<br>";
+            if (amtArr.length > 0) {
+                
+                console.log("amtArr contents: " + amtArr);
+                    
+                if (amtArr[i - 1] === x[i].getElementsByTagName("Cell")[4].childNodes[0].textContent) {
+                    
+                    
+                    console.log("found duplicate in amtArr[i-1]: " + amtArr[i - 1]);
+                    if (amtArr[i - 1].size > 1) {
+                        
+                        console.log("amtArr[i-1].size: " + amtArr[i - 1].size);
+                        
+                        amtArr[i - 1][amtArr[i - 1].size] = x[i].getElementsByTagName("Cell")[4].childNodes[0].textContent;
+                    }
+                    amtArr[i - 1][0] = (x[i].getElementsByTagName("Cell")[4].childNodes[0].textContent);
+
+                } else {
+                    amtArr[i] = x[i].getElementsByTagName("Cell")[4].childNodes[0].textContent;
+                    console.log("row child count = " + x[i].childElementCount);
+                    console.log("adding.... " + x[i].getElementsByTagName("Cell")[4].childNodes[0].textContent);
+                    txt += x[i].getElementsByTagName("Cell")[4].childNodes[0].textContent + "<br>";
+                }
+            } else {
+                amtArr[i] = x[i].getElementsByTagName("Cell")[4].childNodes[0].textContent;
+                console.log("row child count = " + x[i].childElementCount);
+                console.log("adding.... " + x[i].getElementsByTagName("Cell")[4].childNodes[0].textContent);
+                txt += x[i].getElementsByTagName("Cell")[4].childNodes[0].textContent + "<br>";
+            }
         } else if (x[i].childElementCount === 5) {
-            y = x[i].getElementsByTagName("Cell")[3].childNodes[0].textContent + "<br>";
-            numContacts(y, x.length, i);
+            
+            amtArr[i] = x[i].getElementsByTagName("Cell")[3].childNodes[0].textContent + "<br>";
+            console.log("amtArr contents" + amtArr);
             console.log("row child count = " + x[i].childElementCount);
             console.log("adding.... " + x[i].getElementsByTagName("Cell")[3].childNodes[0].textContent);
             txt += x[i].getElementsByTagName("Cell")[3].childNodes[0].textContent + "<br>";
