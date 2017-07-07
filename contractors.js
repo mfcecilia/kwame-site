@@ -66,65 +66,68 @@ function printArr(arr) {
 }
 
 
+
+
 /*
 *
 *
 *count number of contacts each company has
-
-
-function numContacts(num, amt, count) {
-    'use strict';
-    
-    //num represents the current row item being analyzed
-    //amt represents x.length
-    //count represents i
-    
-    var a; //arrAmt row iterator
-    var b; //arrAmt col iterator
-    var c; //zero
-    
-    //2d array to count the amount of contacts per company
-    var arrAmt = [0][0];
-    
-    //only check if there are already items have have been added
-    if (count > 1) {
-        for (a = 0; a < arrAmt.length; a++) {
-            printArr(arrAmt);
-            //check if the current item is already in arrAmt[][]
-            if (arrAmt[a][b] === num) {
-                //check if there are multiple columns already
-                if (arrAmt[a] > 0) {
-                    arrAmt[a].push(num);
-                //find the next empty column
-                //or avoid this check and see if there's a push method to add to beginning instead of end
-                //add to column in arrAmt
-                } else {
-                    //idk
-                }
-            } else {
-                //idk
-            }
-        }
-    } else {
-        //add current item being analyzed to arrAmt[i][a] if it is the first in the xml
-        arrAmt[count][0] = num;
-    }
-}
 *
 *
 */
+
+
+
+function countDuplicates(arr) {
+    'use strict';
+    var a, b, c;
+    var count = 1;
+    var amtContacts = [];
+    
+    //create object from first item in the array as a starting comparison
+    var company = {};
+    company.name = arr[a];
+    company.count = count;
+    company.index = a;
+    
+    
+    //begin loop for counting duplicates
+    for (a = 0; a < arr.length; a++) {
+        
+        //compare 2 array items
+        if (arr[a] === arr[a + 1]) {
+            count++;
+            //set object count to equal the count var
+            company.count = count;
+        } else {
+            //record [a] in amtContacts array
+            amtContacts[a] = company;
+            console.log("added " + company.name + " with " + company.count + " contact(s) from index " + company.index);
+            //create new object representing [a + 1]
+            count = 1;
+            company.name = arr[a + 1];
+            company.count = count;
+            company.index = (a + 1);
+        }
+    }
+    //sort the objects by company.count
+    
+    //print them to the modal
+}
+
 
 
 
 /*
 *
 *
-*parse contractor xml into html amt modal
-*
+*parse contractor xml into an array
+*count duplicates in the array using countDuplicates(arr)
+*format for html and print to amt modal
 *
 */
 
-function amtContractors(xml) {
+function getContractors(xml) {
     'use strict';
     var x, y, i, xmlDoc, txt;
     xmlDoc = xml.responseXML;
@@ -145,49 +148,40 @@ function amtContractors(xml) {
     for (i = 1; i < x.length; i++) {
         
         if (x[i].childElementCount === 6) {
-            if (amtArr.length > 0) {
-                
-                console.log("amtArr contents: " + amtArr);
-                    
-                if (amtArr[i - 1] === x[i].getElementsByTagName("Cell")[4].childNodes[0].textContent) {
-                    
-                    
-                    console.log("found duplicate in amtArr[i-1]: " + amtArr[i - 1]);
-                    if (amtArr[i - 1].size > 1) {
-                        
-                        console.log("amtArr[i-1].size: " + amtArr[i - 1].size);
-                        
-                        amtArr[i - 1][amtArr[i - 1].size] = x[i].getElementsByTagName("Cell")[4].childNodes[0].textContent;
-                    }
-                    amtArr[i - 1][0] = (x[i].getElementsByTagName("Cell")[4].childNodes[0].textContent);
-
-                } else {
-                    amtArr[i] = x[i].getElementsByTagName("Cell")[4].childNodes[0].textContent;
-                    console.log("row child count = " + x[i].childElementCount);
-                    console.log("adding.... " + x[i].getElementsByTagName("Cell")[4].childNodes[0].textContent);
-                    txt += x[i].getElementsByTagName("Cell")[4].childNodes[0].textContent + "<br>";
-                }
-            } else {
-                amtArr[i] = x[i].getElementsByTagName("Cell")[4].childNodes[0].textContent;
-                console.log("row child count = " + x[i].childElementCount);
-                console.log("adding.... " + x[i].getElementsByTagName("Cell")[4].childNodes[0].textContent);
-                txt += x[i].getElementsByTagName("Cell")[4].childNodes[0].textContent + "<br>";
-            }
-        } else if (x[i].childElementCount === 5) {
+            console.log("<Row> child count = " + x[i].childElementCount);
             
-            amtArr[i] = x[i].getElementsByTagName("Cell")[3].childNodes[0].textContent + "<br>";
-            console.log("amtArr contents" + amtArr);
-            console.log("row child count = " + x[i].childElementCount);
-            console.log("adding.... " + x[i].getElementsByTagName("Cell")[3].childNodes[0].textContent);
-            txt += x[i].getElementsByTagName("Cell")[3].childNodes[0].textContent + "<br>";
+            //add to array for counting duplicates later
+            amtArr[i] = x[i].getElementsByTagName("Cell")[4].childNodes[0].textContent;
+            console.log("added " + x[i].getElementsByTagName("Cell")[4].childNodes[0].textContent + " to amtArr[i] at index: " + i);
+
+        } else if (x[i].childElementCount === 5) {
+            console.log("<Row> child count = " + x[i].childElementCount);
+            
+            //add to array for counting duplicates later
+            amtArr[i] = x[i].getElementsByTagName("Cell")[3].childNodes[0].textContent;
+            console.log("added " + x[i].getElementsByTagName("Cell")[3].childNodes[0].textContent + " to amtArr[i] at index: " + i);
+            
             
         } else {
+            //error message
             console.log("could not add child node");
         }
     }
-    console.log("x.length = " + x.length);
-    document.getElementById("amt-list-container").innerHTML = txt;
+    
+    //print to amt modal in html
+    //txt += x[i].getElementsByTagName("Cell")[4].childNodes[0].textContent + "<br>";
+    //txt += x[i].getElementsByTagName("Cell")[3].childNodes[0].textContent + "<br>";
+    
+    //print number of rows
+    console.log("x.length (number of <Row> tags) = " + x.length);
+    
+    //document.getElementById("amt-list-container").innerHTML = txt;
+    
+    countDuplicates(amtArr);
+
 }
+
+
 
 
 
@@ -204,7 +198,7 @@ function loadAmtXML() {
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function () {
         if (this.readyState === 4 && this.status === 200) {
-            amtContractors(this);
+            getContractors(this);
             console.log("loading xml doc");
         }
     };
