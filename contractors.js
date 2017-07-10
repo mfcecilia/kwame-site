@@ -83,10 +83,11 @@ function countDuplicates(arr) {
     var a, b, c;
     var count = 1;
     var amtContacts = [];
+    var txt = "";
     
     //create object from first item in the array as a starting comparison
     var company = {};
-    company.name = arr[a];
+    company.name = "name";
     company.count = count;
     company.index = a;
     
@@ -100,8 +101,11 @@ function countDuplicates(arr) {
             //set object count to equal the count var
             company.count = count;
         } else {
-            //record [a] in amtContacts array
-            amtContacts[a] = company;
+            //record [a] values in amtContacts array
+            b = 0;
+            amtContacts[a] = (company.count + "<br>" + company.name + "<br>");
+            console.log("modal output: " + amtContacts[a]);
+
             console.log("added " + company.name + " with " + company.count + " contact(s) from index " + company.index);
             //create new object representing [a + 1]
             count = 1;
@@ -112,7 +116,16 @@ function countDuplicates(arr) {
     }
     //sort the objects by company.count
     
+    //format for html
+    for (c = 0; c < amtContacts.length; c++) {
+        console.log("compay + amt: " + amtContacts[c]);
+
+        txt += amtContacts[c] + "<br>";
+    }
+    
+    
     //print them to the modal
+    document.getElementById("amt-list-container").innerHTML = txt;
 }
 
 
@@ -131,15 +144,11 @@ function getContractors(xml) {
     'use strict';
     var x, y, i, xmlDoc, txt;
     xmlDoc = xml.responseXML;
-    txt = "";
+    
     var amtArr = [];
     var cols = 100;
     var a;
     
-    //init the 2d array
-    for (a = 0; a < cols; a++) {
-        amtArr[a] = [];
-    }
     
     //variable to store "row" tags
     x = xmlDoc.getElementsByTagName("Worksheet")[0].getElementsByTagName("Row");
