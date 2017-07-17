@@ -42,14 +42,19 @@ function alphaContractors(xml) {
 function loadAlphaXML() {
     'use strict';
     var xmlhttp = new XMLHttpRequest();
+    
+    console.log("START loadAlphaXML()");
+    
     xmlhttp.onreadystatechange = function () {
         if (this.readyState === 4 && this.status === 200) {
             alphaContractors(this);
             console.log("loading xml doc");
         }
     };
-    xmlhttp.open("GET", "/files/contractors.xml", true);
+    xmlhttp.open("GET", "files/contractors.xml", true);
     xmlhttp.send();
+    
+    console.log("END loadAlphaXML()");
 }
 
 

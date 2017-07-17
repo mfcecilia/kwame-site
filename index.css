@@ -122,7 +122,7 @@ p {
 /*alpha modal content*/
 .alpha-modal-content, .amt-modal-content {
     position: relative;
-    background-color: #f1e9e7;
+    background-color: #f1e9e7; /* Pinkish White */
     margin: auto;
     padding: 0;
     border: 1px solid #888;

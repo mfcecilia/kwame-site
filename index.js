@@ -18,4 +18,3 @@ global variables
 
 //user's selections
 var results;
-var selections;

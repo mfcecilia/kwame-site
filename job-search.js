@@ -12,8 +12,6 @@
 */
 
 
-
-
 /*
 *
 when the user clicks on the alphabetical search button, open the modal to show company list.
@@ -177,8 +175,6 @@ function alphaSave() {
 
 
 
-
-
 /*
 *
 *
@@ -186,8 +182,6 @@ function alphaSave() {
 *
 *
 */
-
-
 
 
 /*
