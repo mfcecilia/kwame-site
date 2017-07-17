@@ -17,13 +17,17 @@ function alphaContractors(xml) {
     xmlDoc = xml.responseXML;
     txt = "";
     x = xmlDoc.getElementsByTagName("Worksheet")[1].getElementsByTagName("Row");
+    
+    console.log("START alphaContractors(xml)");
 
     
     for (i = 0; i < x.length; i++) {
-        txt += x[i].childNodes[1].textContent + "<br>";
+        txt += "<br><div id='alpha-select' onclick='alphaSelect(" + i + ")'>" + x[i].childNodes[1].textContent + "</div>";
     }
     console.log("x.length = " + x.length);
     document.getElementById("alpha-list-container").innerHTML = txt;
+    
+    console.log("END alphaContractors(xml)");
 }
 
 

@@ -7,10 +7,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
+    <script type='text/javascript' > 
+        var results = [2000];
+        var loop = 0;
+        for (loop; loop < 2000; loop++) {
+            results[loop] = [200];
+        }
+    </script>
+    
+    <script src="select.js"></script>
     <script src="index.js"></script>
     <script src="job-search.js"></script>
     <script src="job-results.js"></script>
     <script src="contractors.js"></script>
+    
     
     <link rel="shortcut icon" href="#" />
     
@@ -108,28 +118,14 @@
                         <div class="alpha-modal-body">
                             
                                 <div id="alpha-list-container" class="alpha-list-container">
-                                    <fieldset>
-                                      <legend>Select the companies that appeal to you</legend>
-                                      <div>
-                                        <input class="alpha-checkbox" type="checkbox" id="arqqo" name="company" value="arqqo">
-                                        <label for="arqqo">ARQQO</label>
-                                      </div>
-                                        <div>
-                                        <input class="alpha-checkbox" type="checkbox" id="google" name="company" value="google">
-                                        <label for="google">Google</label>
-                                      </div>
-                                      <div>
-                                        <input class="alpha-checkbox" type="checkbox" id="woe" name="company" value="woe">
-                                        <label for="woe">WOE</label>
-                                      </div>
-                                    </fieldset>
+                                    
                                 </div>
                 
                         </div>
                             
                         </div>
                         
-                        <div class="alpha-modal-footer" onclick="alphaSave()">
+                        <div class="alpha-modal-footer" onclick="alphaSave(); alphaResults();">
                             
                             <span class="jobs-alpha-save"></span>
                         
@@ -207,7 +203,7 @@
                 <p id="result-instr">Your search results will appear here. When you are satisfied with your selections, click "Purchase"</p>
             
             <div id="result-preview" class="result-view">
-            <div class="result-item"></div>
+
             </div>
         
         </div>

@@ -3,7 +3,6 @@
 /* jslint latedef:false*/
 
 
-
 /*
 *
 *
@@ -28,6 +27,15 @@ function alphaBtnEvents() {
     
     var jobsAlphaModal = document.getElementById('jobs-alpha-modal');
     
+    var resultPreview = document.getElementsByClassName('result-view')[0];
+    
+    var jobsAlphaList = document.getElementsByClassName('alpha-list-container')[0];
+    
+    var i = 0;
+    
+    var j = 0;
+    
+    
     //tell console we are inside the function
     console.log("START alphaBtnEvents function");
     
@@ -36,13 +44,23 @@ function alphaBtnEvents() {
         //tell console we registered the button click and ready to proceed
         console.log("...alphabetical job search button click registered....");
         
-        //say what the user clicked
-        
+        //find which have been previously selected via checking result view
+        if (resultPreview.getElementsByTagName('div').length > 0) {
+            console.log("...scanning results...");
+            for (i; i < resultPreview.length; i++) {
+                for (j; j < jobsAlphaList.length; j++) {
+                    if (resultPreview.getElementsByTagName('div')[i].innerHTML === jobsAlphaList.getElementsByTagName('div')[j]) {
+                        //highlight to show it has been selected
+                        jobsAlphaList.getElementsByTagName('div')[j].style.color = "white";
+                        jobsAlphaList.getElementsByTagName('div')[j].style.backgroundColor = "#164f9c";
+                    }
+                }
+            }
+        }
         
         //display the modal
         jobsAlphaModal.style.display = "block";
 
-        //opaque backdrop displayed
 
         //tell console that all actions have completed successfully
         console.log("END alphaBtnEvents");
@@ -144,46 +162,10 @@ function alphaSave() {
     
     var jobsAlphaModal = document.getElementById('jobs-alpha-modal');
     var alphaModalFooter = document.getElementsByClassName('alpha-modal-footer');
-    var alphaXboxes = document.getElementsByClassName('alpha-checkbox');
-    var resultView = document.getElementsByClassName('result-view');
-    var resultItem = document.getElementsByClassName('result-item');
     
     //on click
     if (window.addEventListener("click", alphaModalFooter) !== null) {
         console.log("...save button in alpha modal registered...");
-        
-        //checkbox iterator
-        var a = 0;
-        //array of selected items
-        var alphaX = [];
-        
-        //gather selections
-        for (a; a < alphaXboxes.length; a++) {
-            console.log("analyzing checkbox #: " + a);
-            if (alphaXboxes[a].checked) {
-                alphaX[a] = (alphaXboxes[a].value);
-                console.log("selected in alpha search: " + alphaXboxes[a].value);
-                console.log("added: " + alphaX[a]);
-            } else {
-                console.log("not checked");
-                console.log("alphaX[a]: " + alphaX[a]);
-            }
-        }
-        
-        var b = 0;
-        var newResult;
-        
-        //populate preview
-        for (b; b < alphaX.length; b++) {
-            if (typeof alphaX[b] === 'string' || alphaX[b] instanceof String) {
-                console.log("adding to result view: " + alphaX[b]);
-                newResult = document.createElement('div');
-                newResult.className = 'result-item';
-                document.getElementById('result-preview').appendChild(newResult);
-                resultItem[b].innerHTML = alphaX[b];
-                console.log("result now contains: " + resultItem[b].innerHTML);
-            }
-        }
         
         //close modal
         jobsAlphaModal.style.display = "none";
