@@ -49,14 +49,9 @@ function alphaResults() {
     //iterate to find selected items
     for (a = 0; a < selected.length; a++) {
         if (selected[a].style.color === "white") {
-            console.log("selection found: " + selected[a].textContent);
+            console.log("...selection found: " + selected[a].textContent);
             
             //add to global result array
-            for (b = 0; b < results.length; b++) {
-                if (results[b] === 0) {
-                    results[b] = selected[a].textContent;
-                }
-            }
             
             //format html var with selections for result view
             resultTxt += "<br><div id='alpha-result'>" + selected[a].textContent + "</div>";
