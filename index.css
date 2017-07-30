@@ -88,6 +88,20 @@ p {
     transition-duration: 0.4s;
 }
 
+.alpha-modal-header input {
+    border: none;
+    font-size: 200%;
+    font-family: 'PT Sans', sans-serif;
+    cursor: pointer;
+    background-color: inherit;
+    color: white;
+    font-weight: 900;
+}
+
+.alpha-modal-header input:hover {
+    background-color: firebrick;
+}
+
 /* Tooltip text */
 #alpha-tooltips .alpha-reset-tip-txt, #amt-tooltips .amt-reset-tip-txt {
     visibility: hidden;

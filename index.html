@@ -90,15 +90,17 @@
                 
                 <button id="jobs-alpha-btn" class="btn-alpha" onclick="alphaBtnEvents(); loadAlphaXML();">Companies - Alphabetical Order</button>
                 
+                <form>
+                
                 <div id="jobs-alpha-modal" class="jobs-modal">
                     
                     <div class="alpha-modal-content">
                         
                         <div class="alpha-modal-header">
                                 
-                            <h2  id="alpha-tooltips" onclick="alphaReset(); clrAlphaResults();">Reset<br>
-                                <span class="alpha-reset-tip-txt">Click "Reset" to deselect these choices and clear them from your results</span>
-                            </h2>
+                            <input type="reset" id="alpha-tooltips" onclick="alphaReset(); clrAlphaResults();">
+                                <br>
+                                    <span class="alpha-reset-tip-txt">Click "Reset" to deselect these choices and clear them from your results</span>
 
                         </div>
                         
@@ -116,11 +118,12 @@
                             
                             <span class="jobs-alpha-save"></span>
                         
-                            <h2>Save</h2>
+                            <h2 type="submit">Save</h2>
                             
                         </div>
                         
                     </div>
+                </form>
                     
                 </div>
         
