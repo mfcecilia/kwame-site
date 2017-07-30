@@ -13,19 +13,38 @@
 
 function alphaContractors(xml) {
     'use strict';
-    var x, i, xmlDoc, txt;
+    var x, i, xmlDoc, txt, resultAlloc, resultItem, resultPreview;
     xmlDoc = xml.responseXML;
     txt = "";
+    resultAlloc = "";
+    resultPreview = document.getElementById("result-preview").innerHTML;
+    resultItem = document.getElementById("result-item");
     x = xmlDoc.getElementsByTagName("Worksheet")[1].getElementsByTagName("Row");
     
     console.log("START alphaContractors(xml)");
-
     
+    
+    
+    //load modal with companies
     for (i = 0; i < x.length; i++) {
         txt += "<br><div id='alpha-select' onclick='alphaSelect(" + i + ")'>" + x[i].childNodes[1].textContent + "</div>";
     }
+    
+    //check if there are already results
+    if (resultPreview === "") {
+        console.log("result preview is empty, loading divs");
+        for (i = 0; i < x.length; i++) {
+            resultAlloc += "<div id='result-item' onclick='resultRemove(" + i + "); alphaResults(" + i + ")'><br>" + "</div>";
+        }
+        
+    } else {
+        document.preventDefault();
+        console.log("result view is not empty");
+    }
+
     console.log("x.length = " + x.length);
     document.getElementById("alpha-list-container").innerHTML = txt;
+    document.getElementById("result-preview").innerHTML = resultAlloc;
     
     console.log("END alphaContractors(xml)");
 }

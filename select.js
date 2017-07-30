@@ -18,47 +18,34 @@ function alphaSelect(company) {
         console.log("already selected. deselecting now");
         document.getElementsByClassName('alpha-list-container')[0].getElementsByTagName('div')[company].style.color = "black";
         document.getElementsByClassName('alpha-list-container')[0].getElementsByTagName('div')[company].style.background = "#f1e9e7";
-        
-
     } else {
         
         //highlight selection on click
         document.getElementsByClassName('alpha-list-container')[0].getElementsByTagName('div')[company].style.color = "white";
         document.getElementsByClassName('alpha-list-container')[0].getElementsByTagName('div')[company].style.background = "#164f9c";
     }
+    
+    //add to the result div with the same index
+    document.getElementById("result-preview").getElementsByTagName("div")[company].style.display = "block";
+    document.getElementById("result-preview").getElementsByTagName("div")[company].innerHTML = clicked.innerHTML;
 
     console.log("clicked: " + clicked.innerHTML);
     console.log("END alphaSelect(company)");
-
 }
 
 
 /*
-populate result preview
-executes when "Save" is clicked
+populate result preview as they are selected
+give them the ability to be deleted
 */
-function alphaResults() {
+function alphaResults(company) {
     'use strict';
-    var a, b, resultPreview, selected, resultTxt;
-    resultPreview = document.getElementById('result-preview');
-    selected = document.getElementsByClassName('alpha-list-container')[0].getElementsByTagName('div');
-    resultTxt = "";
+    var clicked, resultView, resultItemDiv, resultItem;
+    
     
     console.log("START alphaResults() function");
     
-    //iterate to find selected items
-    for (a = 0; a < selected.length; a++) {
-        if (selected[a].style.color === "white") {
-            console.log("...selection found: " + selected[a].textContent);
-            
-            //add to global result array
-            
-            //format html var with selections for result view
-            resultTxt += "<br><div id='alpha-result'>" + selected[a].textContent + "</div>";
-        }
-    }
-
-    //add to result view html
-    resultPreview.innerHTML = resultTxt;
+    console.log("alpharesults doesn't do anything yet");
+    
     console.log("END alphaResults() function");
 }

@@ -95,3 +95,9 @@ function clrAmtResults() {
         console.log("clrAmtResults button click not registered");
     }
 }
+
+
+/*
+hide all divs
+only show divs with text inside.
+*/

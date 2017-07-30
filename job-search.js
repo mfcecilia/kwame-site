@@ -42,23 +42,15 @@ function alphaBtnEvents() {
         //tell console we registered the button click and ready to proceed
         console.log("...alphabetical job search button click registered....");
         
-        //find which have been previously selected via checking result view
-        if (resultPreview.getElementsByTagName('div').length > 0) {
-            console.log("...scanning results...");
-            for (i; i < resultPreview.length; i++) {
-                for (j; j < jobsAlphaList.length; j++) {
-                    if (resultPreview.getElementsByTagName('div')[i].innerHTML === jobsAlphaList.getElementsByTagName('div')[j]) {
-                        //highlight to show it has been selected
-                        jobsAlphaList.getElementsByTagName('div')[j].style.color = "white";
-                        jobsAlphaList.getElementsByTagName('div')[j].style.backgroundColor = "#164f9c";
-                    }
-                }
-            }
+        //close modal if clicked while modal is already open
+        if (jobsAlphaModal.style.display === "block") {
+            jobsAlphaModal.style.display = "none";
+        } else {
+            //display the modal
+            jobsAlphaModal.style.display = "block";
         }
         
-        //display the modal
-        jobsAlphaModal.style.display = "block";
-
+        console.log("alphaBtnEvents doesn't actually do anything yet");
 
         //tell console that all actions have completed successfully
         console.log("END alphaBtnEvents");
@@ -102,6 +94,8 @@ function alphaReset() {
     
     //close modal
     jobsAlphaModal.style.display = "none";
+    
+    console.log("alphaReset doesn't actually do anything yet");
     console.log("END alphaReset");
 }
 
@@ -120,36 +114,18 @@ function alphaSave() {
     
     var jobsAlphaModal = document.getElementById('jobs-alpha-modal');
     var alphaModalFooter = document.getElementsByClassName('alpha-modal-footer');
-    var selected = [];
-    var results = [];
-    var a = 0;
     
     //on click
     if (window.addEventListener("click", alphaModalFooter) !== null) {
         console.log("...save button in alpha modal registered...");
-        
-        //check for existing items in result view, add to results array
-        //if result-view length > 0
-            //for loop result-view
-            //add to results[]
-        
-        //check for highlighted items in modal, add to selected array
-            //for loop
-            //if highlighted, add to selected[]
-        
-        //compare results vs selected, add selected to results if they don't match to avoid duplicates
-            //for loop selected
-            //for loop results
-            //if selected !== results[], add selected[] to results[]
-        
-        //adjust results accordingly
-        
         
         //close modal
         jobsAlphaModal.style.display = "none";
     } else {
         console.log("alphaSave function FAILED");
     }
+    
+    console.log("alphaSave doesn't actually do anything yet");
     console.log("END alphaSave");
 }
 
