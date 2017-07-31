@@ -34,7 +34,7 @@ function alphaContractors(xml) {
     if (resultPreview === "") {
         console.log("result preview is empty, loading divs");
         for (i = 0; i < x.length; i++) {
-            resultAlloc += "<div id='result-item' onclick='resultRemove(" + i + "); alphaResults(" + i + ")'><br>" + "</div>";
+            resultAlloc += "<div id='result-item' onclick='resultRemove(" + i + "); alphaResults(" + i + ")'>" + "</div>";
         }
         
     } else {

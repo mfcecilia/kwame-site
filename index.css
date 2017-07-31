@@ -217,7 +217,6 @@ p {
 #jobs-results {
     margin: auto;
     padding: 100px;
-    
 }
 
 
@@ -232,7 +231,27 @@ p {
 
 #result-preview div {
     display: none;
-} 
+    font-weight: 700;
+}
+
+#result-preview div:hover {
+    background-color: #164f9c;
+    color: white;
+}
+
+#result-preview i {
+    cursor: pointer;
+    padding-top: 1%;
+    color: black;
+    display: block;
+    margin: 0 auto;
+    width: 5%;
+}
+
+#result-preview i:hover {
+    color: white;
+}
+
 
 /*purchase button*/
 #purchase {

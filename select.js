@@ -27,7 +27,7 @@ function alphaSelect(company) {
     
     //add to the result div with the same index
     document.getElementById("result-preview").getElementsByTagName("div")[company].style.display = "block";
-    document.getElementById("result-preview").getElementsByTagName("div")[company].innerHTML = clicked.innerHTML;
+    document.getElementById("result-preview").getElementsByTagName("div")[company].innerHTML = "<br>" + clicked.innerHTML + "<br>" + "<i class='fa fa-trash'></i>" + "<br>";
 
     console.log("clicked: " + clicked.innerHTML);
     console.log("END alphaSelect(company)");
