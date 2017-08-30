@@ -4,7 +4,7 @@ body {
 }
 
 /*larger heading text*/
-h1, h5, h3 {
+h5, h4, h3 {
     text-align: center;
     color: #02356a;
 }
@@ -22,9 +22,9 @@ p {
 
 }
 
-#how-url {
-    color: #02356a;
+#how a {
     text-decoration: none;
+    color: #02356a;
 }
 
 #how-img {
@@ -38,7 +38,6 @@ p {
 
 /*specific to divs for all sections on the right side*/
 .jobs, .contact, .home, .faq {
-    padding-top: 5%;
     padding-bottom: 5%;
     transition-timing-function: ease-in;
     transition: 0.2s;
@@ -49,6 +48,8 @@ p {
     justify-content: center;
     align-self: center;
     margin: auto;
+    margin-top: 15%;
+    display: block;
 }
 
 #jobs-instr {
