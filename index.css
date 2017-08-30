@@ -1,6 +1,9 @@
 /*global page properties*/
 body {
     font-family: 'PT Sans', sans-serif;
+    justify-content: center;
+    align-self: center;
+    text-align: center;
 }
 
 /*larger heading text*/
@@ -19,7 +22,7 @@ p {
 
 /*specific to the home div*/
 .home {
-    text-align: center;
+
 }
 
 #how-url {
@@ -28,22 +31,27 @@ p {
 }
 
 #how-img {
-    width: 95%;
+    width: 50em;
 }
 
 /*specific to the job search div*/
 .jobs {
-    text-align: center;
+    
 }
 
 /*specific to divs for all sections on the right side*/
-.jobs, .about, .contact, .home, .faq {
-    padding: 5%;
-    margin: auto;
-    width: 70%;
-    float: right;
+.jobs, .contact, .home, .faq {
+    padding-top: 5%;
+    padding-bottom: 5%;
     transition-timing-function: ease-in;
     transition: 0.2s;
+    left: 0;
+    right: 0;
+    width: 60em;
+    text-align: center;
+    justify-content: center;
+    align-self: center;
+    margin: auto;
 }
 
 #jobs-instr {
@@ -215,8 +223,6 @@ p {
 
 /*job results div*/
 #jobs-results {
-    margin: auto;
-    padding: 100px;
 }
 
 
@@ -275,55 +281,9 @@ p {
     color: white;
 }
 
-/*the word "Menu" in the menu bar*/
-#menu {
-    font-size: 30px;
-    color: whitesmoke;
-}
-
-/*side menu*/
-ul, .menu {
-    list-style-type: none;
-    overflow: auto;
-    position: fixed;
-    padding: 0;
-    margin: 0;
-    width: 15%;
-    background-color: #0b0f1a; /* Black */
-    height: 100%;
-}
-
-/*side menu*/
-li a {
-    color: lightgrey;
-    text-align: center;
-    padding: 8px 16px;
-    text-decoration: none;
-    display: block;
-}
-
-/*side menu buttons*/
-li a:hover {
-    background-color: #164f9c;
-}
-
-/*side menu buttons*/
-.active {
-    background-color: #164f9c;
-}
 
 /*border lines between sections*/
 .jobs, .about, .contact, .faq {
-    border-right: solid #164f9c 2px;
     border-bottom: solid #164f9c 2px;
-    margin: 10px;
+    width: 50em;
 }
-
-
-table {border-collapse: collapse; width: 100%;}
-  th, td {border: thin solid black; padding: 3px;}
-  tr.head th, tr.head td {background-color: #EDEDED; border-bottom: 4px double black;}
-  span.linetitle {font-weight: bold;}
-  div.lineclass {font-style: italic;}
-  .title, .result {width: 80%;}
-  .notes {width: 15%;}

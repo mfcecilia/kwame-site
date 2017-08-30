@@ -1,0 +1,39 @@
+/*the word "Menu" in the menu bar*/
+#menu {
+    font-size: 30px;
+    color: whitesmoke;
+}
+
+/*side menu*/
+ul, .menu {
+    list-style-type: none;
+    overflow: hidden;
+    position: fixed;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    background-color: #0b0f1a; /* Black */
+    height: 5em;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+/*side menu buttons*/
+li a {
+    color: lightgrey;
+    text-align: center;
+    padding: 8px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/*side menu buttons*/
+li a:hover {
+    background-color: #164f9c;
+}
+
+/*side menu buttons*/
+.active {
+    background-color: #164f9c;
+}
