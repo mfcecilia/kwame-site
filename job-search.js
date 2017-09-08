@@ -14,7 +14,7 @@
 
 /*
 *
-when the user clicks on the alphabetical search button, open the modal to show company list.
+Open Company List Modal
 *
 */
 
@@ -75,16 +75,19 @@ function alphaReset() {
     
     // store the modal element
     var jobsAlphaModal = document.getElementById('jobs-alpha-modal');
+    
     // store the <span> element that closes the modal
     var jobsAlphaReset = document.getElementsByClassName("alpha-modal-header")[0];
-    //store alpha checkbox class
-    var alphaXboxes = document.getElementsByClassName('alpha-checkbox');
+    
     
     //on click
     if (jobsAlphaReset.addEventListener("click", jobsAlphaReset) !== null) {
         
         //click success message
         console.log("...reset alpha job search button click registered...");
+        
+        //remove from result view
+        //unhighlight selections
         
     } else {
         

@@ -96,7 +96,7 @@ All formatting related to the Jobs section
     background-color: #f1e9e7; /* Pinkish White */
     margin: auto;
     padding: 0;
-    border: 1px solid #888;
+    border: 1px solid #888; /* Grey */
     width: auto;
 }
 
@@ -112,7 +112,7 @@ All formatting related to the Jobs section
     padding: 2px 16px;
     margin: auto;
     width: auto;
-    background-color: #81aef1;
+    background-color: #81aef1; /* Baby Blue */
     color: white;
     cursor: pointer;
 }
@@ -125,7 +125,7 @@ All formatting related to the Jobs section
 
 /*the jobs alpha close button*/
 .jobs-alpha-close {
-    color: #f1e9e7;
+    color: #f1e9e7; /* Pinkish White */
     float: right;
     font-size: 50px;
     font-weight: bold;
@@ -196,7 +196,7 @@ RESULTS
 }
 
 #result-preview div:hover {
-    background-color: #164f9c;
+    background-color: #4CAF50; /* Green */
     color: white;
 }
 
