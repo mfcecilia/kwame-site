@@ -3,10 +3,7 @@ body {
     font-family: 'PT Sans', sans-serif;
 }
 
-#opacity {
-    background: rgba(0, 0, 0, .1);
-    padding-top: 3em;
-}
+
 /*larger heading text*/
 h5, h4, h3 {
     text-align: center;
@@ -20,27 +17,20 @@ p {
     color: #02356a;
 }
 
-
-/*specific to the home div*/
-.home {
-
-}
-
-#how a {
-    text-decoration: none;
-    color: #02356a;
-}
-
+/*how to image*/
 #how-img {
     width: 50em;
 }
 
-/*specific to the job search div*/
-.jobs {
-    
+
+/*border lines between sections*/
+.home, .jobs, .contact, .faq {
+    border-bottom: solid #164f9c 2px;
+    width: 50em;
 }
 
-/*specific to divs for all sections on the right side*/
+
+/*specific to divs for all sections*/
 .jobs, .contact, .home, .faq {
     padding-bottom: 5%;
     transition-timing-function: ease-in;
@@ -54,237 +44,4 @@ p {
     margin: auto;
     margin-top: 15%;
     display: block;
-}
-
-#jobs-instr {
-    color: #81aef1;
-}
-
-/*jobs dropdown button positions*/
-#jobs #jobs-alphabetical, #jobs #jobs-amounts {
-    padding: inherit;
-    margin: auto;
-} 
-
-#jobs-alphabetical, #jobs-amounts {
-}
-
-
-/*jobs modal */
-.jobs-modal {
-    display: none; /*hidden by default*/
-    z-index: 4; /*sit on top*/
-    width: 100%; /*full width*/
-    height: 100%; /*full height*/
-    overflow: auto; /*enable scroll if needed*/
-    box-shadow: 20px 20px 15px #888888;
-    opacity: 0.8;
-    filter: alpha(opacity=50); /* For IE8 and earlier */
-    border-radius: 20px;
-}
-
-/*alpha modal header*/
-.alpha-modal-header, .amt-modal-header {
-    padding: 2px 16px;
-    background-color: #81aef1;
-    color: white;
-    cursor: pointer;
-}
-
-.alpha-modal-header:hover, .amt-modal-header:hover {
-    background-color:firebrick;
-    -webkit-transition-duration: 0.4s; /* Safari */
-    transition-duration: 0.4s;
-}
-
-.alpha-modal-header input {
-    border: none;
-    font-size: 200%;
-    font-family: 'PT Sans', sans-serif;
-    cursor: pointer;
-    background-color: inherit;
-    color: white;
-    font-weight: 900;
-}
-
-.alpha-modal-header input:hover {
-    background-color: firebrick;
-}
-
-/* Tooltip text */
-#alpha-tooltips .alpha-reset-tip-txt, #amt-tooltips .amt-reset-tip-txt {
-    visibility: hidden;
-    width: auto;
-    background-color: #555;
-    color: #fff;
-    text-align: center;
-    border-radius: 6px;
-    font-size: 15px;
-    font-style: normal;
-    font-weight: 100;
-
-    /* Fade in tooltip */
-    opacity: 0;
-    transition: opacity 1s;
-}
-
-
-/* Show the tooltip text when you mouse over the tooltip container */
-#alpha-tooltips:hover .alpha-reset-tip-txt, #amt-tooltips:hover .amt-reset-tip-txt {
-    visibility: visible;
-    opacity: 1;
-}
-
-/*alpha modal body*/
-.alpha-modal-body, .amt-modal-body {
-    padding: 2px 16px;
-    max-height: calc(100vh - 400px);
-    overflow-y: auto;
-}
-
-/*alpha modal content*/
-.alpha-modal-content, .amt-modal-content {
-    position: relative;
-    background-color: #f1e9e7; /* Pinkish White */
-    margin: auto;
-    padding: 0;
-    border: 1px solid #888;
-    width: auto;
-}
-
-/*list of companies*/
-.alpha-list-container, .amt-list-container {
-    padding: 5%;
-    font-weight: bold;
-    font-size: 20px;
-}
-
-/*job search modal footer*/
-.alpha-modal-footer, .amt-modal-footer {
-    padding: 2px 16px;
-    margin: auto;
-    width: auto;
-    background-color: #81aef1;
-    color: white;
-    cursor: pointer;
-}
-
-.alpha-modal-footer:hover, .amt-modal-footer:hover {
-    background-color: #4CAF50; /* Green */
-    -webkit-transition-duration: 0.4s; /* Safari */
-    transition-duration: 0.4s;
-}
-
-/*the jobs alpha close button*/
-.jobs-alpha-close, .jobs-amt-close {
-    color: #f1e9e7;
-    float: right;
-    font-size: 50px;
-    font-weight: bold;
-}
-
-.jobs-alpha-close:hover, .jobs-alpha-close:focus, .jobs-amt-close:hover, .jobs-amt-close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-
-/*job search buttons*/
-.btn-alpha, .btn-amt {
-    background-color: #164f9c;
-    border: none;
-    color: whitesmoke;
-    padding: 10px 10px;
-    text-align: center;
-    text-decoration: none;
-    display: block;
-    margin: auto;
-    font-size: 16px;
-    -webkit-transition-duration: 0.4s; /* Safari */
-    transition-duration: 0.4s;
-    cursor: pointer;
-    border-radius: 10px;
-}
-
-/*job search dropdown buttons color change*/
-.btn-alpha:hover, .btn-amt:hover, #btn-alpha:focus, #btn-amt:focus {
-    background-color: #4CAF50; /* Green */
-    color: white;
-}
-
-#alpha-select {
-    cursor: pointer;
-}
-
-#alpha-select:hover {
-    background-color: white;
-}
-
-
-/*job results div*/
-#jobs-results {
-}
-
-
-#result-instr {
-    color: #81aef1; /* Baby Blue */
-}
-
-/*search result preview window*/
-#result-preview {
-    background-color: #fafafa; /* Off White */
-}
-
-#result-preview div {
-    display: none;
-    font-weight: 700;
-}
-
-#result-preview div:hover {
-    background-color: #164f9c;
-    color: white;
-}
-
-#result-preview i {
-    cursor: pointer;
-    padding-top: 1%;
-    color: black;
-    display: block;
-    margin: 0 auto;
-    width: 5%;
-}
-
-#result-preview i:hover {
-    color: white;
-}
-
-
-/*purchase button*/
-#purchase {
-    background-color: #164f9c; /* Dark Blue */
-    border: none;
-    color: whitesmoke;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    -webkit-transition-duration: 0.4s; /* Safari */
-    transition-duration: 0.4s;
-    cursor: pointer;
-    border-radius: 10px;
-}
-
-/*purchase button color change*/
-#purchase:hover {
-    background-color: #4CAF50; /* Green */
-    color: white;
-}
-
-
-/*border lines between sections*/
-.home, .jobs, .contact, .faq {
-    border-bottom: solid #164f9c 2px;
-    width: 50em;
 }
