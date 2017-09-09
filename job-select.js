@@ -33,19 +33,25 @@ function alphaSelect(company) {
     console.log("END alphaSelect(company)");
 }
 
-
 /*
-populate result preview as they are selected
-give them the ability to be deleted
+Trash Icon Functionality
 */
-function alphaResults(company) {
+
+function resultRemove(company) {
     'use strict';
-    var clicked, resultView, resultItemDiv, resultItem;
     
+    var modalItem, resultItem, modalList, resultList;
     
-    console.log("START alphaResults() function");
+    //modal list item with index
+    modalItem = document.getElementsByClassName('alpha-list-container')[0].getElementsByTagName('div')[company];
     
-    console.log("alpharesults doesn't do anything yet");
+    //result preview item with index
+    resultItem = document.getElementsByClassName('result-view')[0].getElementsByTagName('div')[company];
     
-    console.log("END alphaResults() function");
+    //modal list
+    modalList = document.getElementsByClassName('alpha-list-container')[0];
+    
+    //result preview list
+    resultList = document.getElementsByClassName('result-view')[0];
+    
 }

@@ -3,13 +3,9 @@
 /* jslint latedef:false*/
 
 
-/*
-*
-*
-*alphabetical search
-*
-*
-*/
+
+
+
 
 
 /*
@@ -17,6 +13,8 @@
 Open Company List Modal
 *
 */
+
+
 
 function alphaBtnEvents() {
     'use strict';
@@ -61,11 +59,15 @@ function alphaBtnEvents() {
 
 
 
+
+
 /*
 *
-when the user clicks on 'reset', uncheck everything
+Reset Button
 *
 */
+
+
 
 function alphaReset() {
     'use strict';
@@ -85,6 +87,13 @@ function alphaReset() {
         
         //click success message
         console.log("...reset alpha job search button click registered...");
+        
+        
+        //iterate over modal
+        
+        //if items are highlighted
+        
+        //unhighlight
         
         //remove from result view
         //unhighlight selections
@@ -106,7 +115,7 @@ function alphaReset() {
 
 /*
 *
-when user clicks "done at the end of the alphabetical company search modal, take a snapshot of selections, reveal them in the preview, and close the modal
+Save Button
 *
 */
 

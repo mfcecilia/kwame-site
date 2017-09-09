@@ -33,6 +33,7 @@ function alphaContractors(xml) {
     //check if there are already results
     if (resultPreview === "") {
         console.log("result preview is empty, loading divs");
+        
         for (i = 0; i < x.length; i++) {
             resultAlloc += "<div id='result-item' onclick='resultRemove(" + i + "); alphaResults(" + i + ")'>" + "</div>";
         }
@@ -44,7 +45,7 @@ function alphaContractors(xml) {
 
     console.log("x.length = " + x.length);
     document.getElementById("alpha-list-container").innerHTML = txt;
-    document.getElementById("result-preview").innerHTML = resultAlloc;
+    resultPreview = resultAlloc;
     
     console.log("END alphaContractors(xml)");
 }
