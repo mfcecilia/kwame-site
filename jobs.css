@@ -4,6 +4,10 @@ All formatting related to the Jobs section
 */
 
 
+#jobs-results {
+    justify-content: center;
+}
+
 
 /*job search instructions*/
 #jobs-instr {
@@ -11,7 +15,7 @@ All formatting related to the Jobs section
 }
 
 /*jobs dropdown button positions*/
-#jobs #jobs-alphabetical, #jobs #jobs-amounts {
+#jobs #jobs-alphabetical {
     padding: inherit;
     margin: auto;
 } 
@@ -31,57 +35,6 @@ All formatting related to the Jobs section
     border-radius: 20px;
 }
 
-/*alpha modal header*/
-.alpha-modal-header {
-    padding: 2px 16px;
-    background-color: #81aef1;
-    color: white;
-    cursor: pointer;
-}
-
-.alpha-modal-header:hover {
-    background-color:firebrick;
-    -webkit-transition-duration: 0.4s; /* Safari */
-    transition-duration: 0.4s;
-}
-
-.alpha-modal-header input {
-    border: none;
-    font-size: 200%;
-    font-family: 'PT Sans', sans-serif;
-    cursor: pointer;
-    background-color: inherit;
-    color: white;
-    font-weight: 900;
-}
-
-.alpha-modal-header input:hover {
-    background-color: firebrick;
-}
-
-/* Tooltip text */
-#alpha-tooltips .alpha-reset-tip-txt {
-    visibility: hidden;
-    width: auto;
-    background-color: #555;
-    color: #fff;
-    text-align: center;
-    border-radius: 6px;
-    font-size: 15px;
-    font-style: normal;
-    font-weight: 100;
-
-    /* Fade in tooltip */
-    opacity: 0;
-    transition: opacity 1s;
-}
-
-
-/* Show the tooltip text when you mouse over the tooltip container */
-#alpha-tooltips:hover .alpha-reset-tip-txt {
-    visibility: visible;
-    opacity: 1;
-}
 
 /*alpha modal body*/
 .alpha-modal-body {
@@ -117,11 +70,6 @@ All formatting related to the Jobs section
     cursor: pointer;
 }
 
-.alpha-modal-footer:hover {
-    background-color: #4CAF50; /* Green */
-    -webkit-transition-duration: 0.4s; /* Safari */
-    transition-duration: 0.4s;
-}
 
 /*the jobs alpha close button*/
 .jobs-alpha-close {
@@ -233,12 +181,14 @@ PURCHASE
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
+    display: block;
     font-size: 16px;
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
     cursor: pointer;
     border-radius: 10px;
+    justify-content: center;
+    float: inherit;
 }
 
 /*purchase button color change*/

@@ -9,6 +9,7 @@ function alphaSelect(company) {
     
     
     var clicked;
+    
     clicked = document.getElementsByClassName('alpha-list-container')[0].getElementsByTagName('div')[company];
     
     console.log("START alphaSelect(company)");
@@ -18,6 +19,7 @@ function alphaSelect(company) {
         console.log("already selected. deselecting now");
         document.getElementsByClassName('alpha-list-container')[0].getElementsByTagName('div')[company].style.color = "black";
         document.getElementsByClassName('alpha-list-container')[0].getElementsByTagName('div')[company].style.background = "#f1e9e7";
+        
     } else {
         
         //highlight selection on click
@@ -32,6 +34,25 @@ function alphaSelect(company) {
     console.log("clicked: " + clicked.innerHTML);
     console.log("END alphaSelect(company)");
 }
+
+
+
+
+
+
+function alphaResults(company) {
+    'use strict';
+    
+    var clicked, resultView, resultItemDiv, resultItem;
+    
+    console.log("START alphaResults() funciton");
+    
+    
+}
+
+
+
+
 
 /*
 Trash Icon Functionality

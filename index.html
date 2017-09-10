@@ -9,9 +9,7 @@
     
     <script src="contractors.js"></script>
     <script src="job-select.js"></script>
-    <script src="index.js"></script>
     <script src="job-search.js"></script>
-    <script src="job-results.js"></script>
     
     
     <link rel="shortcut icon" href="#" />
@@ -109,19 +107,10 @@
                 
                 <button id="jobs-alpha-btn" class="btn-alpha" onclick="alphaBtnEvents(); loadAlphaXML();">Select Companies</button>
                 
-                <form>
-                
                 <div id="jobs-alpha-modal" class="jobs-modal">
                     
                     <div class="alpha-modal-content">
                         
-                        <div class="alpha-modal-header">
-                                
-                            <input type="reset" onclick="alphaReset()">
-                                <br>
-                                    <span class="alpha-reset-tip-txt">Click "Reset" to deselect these choices and clear them from your results</span>
-
-                        </div>
                         
                         <div class="alpha-modal-body">
                             
@@ -133,16 +122,10 @@
                             
                         </div>
                         
-                        <div class="alpha-modal-footer" onclick="alphaSave(); alphaResults();">
-                            
-                            <span class="jobs-alpha-save"></span>
-                        
-                            <h2 type="submit">Save</h2>
                             
                         </div>
                         
                     </div>
-                </form>
                     
                 </div>
 
@@ -154,14 +137,13 @@
                 <p id="result-instr">To delete a selection, click the trash icon below it.</p>
             
             <div id="result-preview" class="result-view"></div>
-        
+            
+            
         </div>
         
-        <br>
-        <br>
-        <br>
-        
+
         <button id="purchase">Purchase</button>
+        
         
     </div>
     
