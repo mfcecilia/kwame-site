@@ -6,6 +6,8 @@ All formatting related to the Jobs section
 
 #jobs-results {
     justify-content: center;
+    text-align: center;
+    margin: auto;
 }
 
 
@@ -141,13 +143,18 @@ RESULTS
 #result-preview div {
     display: none;
     font-weight: 700;
+    text-align: center;
+    justify-content: center;
 }
+
 
 #result-preview div:hover {
     background-color: #4CAF50; /* Green */
     color: white;
 }
 
+
+/*trash icon*/
 #result-preview i {
     cursor: pointer;
     padding-top: 1%;
@@ -157,6 +164,7 @@ RESULTS
     width: 5%;
 }
 
+/*trash icon*/
 #result-preview i:hover {
     color: white;
 }
@@ -181,14 +189,11 @@ PURCHASE
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
-    display: block;
     font-size: 16px;
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
     cursor: pointer;
     border-radius: 10px;
-    justify-content: center;
-    float: inherit;
 }
 
 /*purchase button color change*/
