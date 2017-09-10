@@ -29,25 +29,10 @@ function alphaSelect(company) {
     
     //add to the result div with the same index
     document.getElementById("result-preview").getElementsByTagName("div")[company].style.display = "block";
-    document.getElementById("result-preview").getElementsByTagName("div")[company].innerHTML = "<br>" + clicked.innerHTML + "<br>" + "<i class='fa fa-trash'></i>" + "<br>";
+    document.getElementById("result-preview").getElementsByTagName("div")[company].innerHTML = "<br>" + clicked.innerHTML + "<br>" + "<i class='fa fa-trash' onclick='resultRemove(" + company + ")'></i>" + "<br>";
 
     console.log("clicked: " + clicked.innerHTML);
     console.log("END alphaSelect(company)");
-}
-
-
-
-
-
-
-function alphaResults(company) {
-    'use strict';
-    
-    var clicked, resultView, resultItemDiv, resultItem;
-    
-    console.log("START alphaResults() funciton");
-    
-    
 }
 
 
@@ -73,6 +58,13 @@ function resultRemove(company) {
     modalList = document.getElementsByClassName('alpha-list-container')[0];
     
     //result preview list
-    resultList = document.getElementsByClassName('result-view')[0];
+    resultList = document.getElementById('result-preview');
+    
+    //hide from result view
+    resultItem.style.display = "none";
+    
+    //unhighlight in modal
+    modalItem.style.color = "black";
+    modalItem.style.background = "#f1e9e7";
     
 }

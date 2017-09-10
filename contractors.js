@@ -39,7 +39,7 @@ function alphaContractors(xml) {
         console.log("result preview is empty, loading divs");
         
         for (i = 0; i < x.length; i++) {
-            resultAlloc += "<div id='result-item' onclick='resultRemove(" + i + "); alphaResults(" + i + ")'>" + "</div>";
+            resultAlloc += "<div id='result-item'></div>";
         }
         
     } else {
