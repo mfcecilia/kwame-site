@@ -4,8 +4,16 @@ put into an array.
 */
 function getSelections() {
     'use strict';
-    //iterate over all result item id's in result preview
-    //if they are style.display block, add to the array
+    var items = document.getElementsByClassName("result-view"),
+        selected = [],
+        x;
+
+    //iterate over all result items in result view
+    for (x = 0; x < items.length; x += 1) {
+        console.log("getSelections() item: " + items[x].textContent);
+        //add to the selected array
+        selected[x] = items[x].textContent;
+    } 
 }
 
 
