@@ -10,10 +10,13 @@ function getSelections() {
 
     //iterate over all result items in result view
     for (x = 0; x < items.length; x += 1) {
-        console.log("getSelections() item: " + items[x].textContent);
+        console.log("getSelections() item: " + items[x].textContent + "\n");
         //add to the selected array
         selected[x] = items[x].textContent;
-    } 
+    }
+    for (x = 0; x < selected.length; x += 1) {
+        console.log("selected array: " + selected[x]);
+    }
 }
 
 
