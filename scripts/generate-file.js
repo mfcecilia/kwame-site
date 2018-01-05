@@ -8,6 +8,8 @@ function getSelections() {
         selected = [],
         x,
         y = 0;
+    
+    console.log("START getSelections()");
 
     //iterate over all result items in result view
     for (x = 0; x < items.length; x += 1) {
@@ -38,8 +40,12 @@ function matchContacts() {
     var companies,
         a,
         b;
+    console.log("START matchContacts()");
     //get the selected array and store in the companies variable
     companies = getSelections();
+    
+    //contacts = getContacts();
+    
     console.log("matchContacts() companies: " + companies);
     for (a = 0; a < companies.length; a += 1) {
         console.log("company " + a + ": " + companies[a]);

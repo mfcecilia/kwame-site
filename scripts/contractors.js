@@ -6,7 +6,7 @@
 /*
 *
 *
-*XML http request for alpha search
+*XML http request for alpha(betical) search
 *
 *
 */
@@ -28,9 +28,11 @@ function alphaContractors(xml) {
     
     
     
-    //load modal with companies
+    //load modal with company names
     for (i = 0; i < x.length; i++) {
         txt += "<br><div id='alpha-select' onclick='alphaSelect(" + i + ")'>" + x[i].childNodes[1].textContent + "</div>";
+        
+        //gather their corresponding contacts
     }
     
     //check if there are already results
@@ -53,6 +55,8 @@ function alphaContractors(xml) {
     document.getElementById("result-preview").innerHTML = resultAlloc;
     
     console.log("END alphaContractors(xml)");
+    
+    //return contacts array
 }
 
 
