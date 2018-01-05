@@ -4,18 +4,26 @@ put into an array.
 */
 function getSelections() {
     'use strict';
-    var items = document.getElementsByClassName("result-view"),
+    var items = document.getElementById("result-preview").childNodes,
         selected = [],
-        x;
+        x,
+        y = 0;
 
     //iterate over all result items in result view
     for (x = 0; x < items.length; x += 1) {
-        console.log("getSelections() item: " + items[x].textContent + "\n");
-        //add to the selected array
-        selected[x] = items[x].textContent;
+        //check if the company name is visible
+        if (items[x].style.display === 'block') {
+            //add to the selected array
+            selected[y] = items[x].textContent;
+            console.log("getSelections() item " + x + ": " + selected[y]);
+            //counter to push to selected array without adding undefined elements
+            y += 1;
+        }
     }
+    //print selected array
+    console.log("selected array: " + "\n");
     for (x = 0; x < selected.length; x += 1) {
-        console.log("selected array: " + selected[x]);
+        console.log(selected[x]);
     }
 }
 
