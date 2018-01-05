@@ -25,6 +25,7 @@ function getSelections() {
     for (x = 0; x < selected.length; x += 1) {
         console.log(selected[x]);
     }
+    return selected;
 }
 
 
@@ -34,7 +35,23 @@ paired up via a more sophisticated data structure.
 */
 function matchContacts() {
     'use strict';
+    var companies,
+        a,
+        b;
+    //get the selected array and store in the companies variable
+    companies = getSelections();
+    console.log("matchContacts() companies: " + companies);
+    for (a = 0; a < companies.length; a += 1) {
+        console.log("company " + a + ": " + companies[a]);
+    }
     
+    //iterate over contractor xml file, find their matches
+    
+    //create an array for each company
+    
+    //store all their contact info into the arrays
+    
+    //return each array
 }
 
 
@@ -44,4 +61,6 @@ Parse the data into a well formatted file
 function generateFile() {
     'use strict';
     
+    //var info = matchContacts()
+    //neatly write info into a text file
 }
