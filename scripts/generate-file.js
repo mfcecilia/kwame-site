@@ -38,18 +38,21 @@ paired up via a more sophisticated data structure.
 function matchContacts() {
     'use strict';
     var companies,
+        contacts,
         a,
         b;
     console.log("START matchContacts()");
     //get the selected array and store in the companies variable
     companies = getSelections();
     
-    //contacts = getContacts();
+    contacts = loadContactsXML();
     
     console.log("matchContacts() companies: " + companies);
     for (a = 0; a < companies.length; a += 1) {
         console.log("company " + a + ": " + companies[a]);
     }
+    
+    console.log("matchContacts() contacts: " + contacts);
     
     //iterate over contractor xml file, find their matches
     
