@@ -27,6 +27,7 @@ function getSelections() {
     for (x = 0; x < selected.length; x += 1) {
         console.log(selected[x]);
     }
+    console.log("END getSelections()");
     return selected;
 }
 
@@ -61,6 +62,7 @@ function matchContacts() {
     //store all their contact info into the arrays
     
     //return each array
+    console.log("END matchContacts()");
 }
 
 

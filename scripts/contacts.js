@@ -1,12 +1,13 @@
 /*
 Create objects to store contact info
 */
-function contactObj(first, last, email, company) {
+function contactObj(first, last, email, info1, info2) {
     'use strict';
     this.firstName = first;
     this.lastName = last;
     this.email = email;
-    this.company = company;
+    this.info1 = info1;
+    this.info2 = info2;
 }
 
 
@@ -20,7 +21,7 @@ function contactObj(first, last, email, company) {
 function getContacts(xml) {
     'use strict';
     var x, i, a, xmlDoc, contacts = [],
-        first, last, email, company, position;
+        first, last, email, info1, info2;
     
     xmlDoc = xml.responseXML;
     x = xmlDoc.getElementsByTagName("Worksheet")[0].getElementsByTagName("Row");
@@ -31,20 +32,28 @@ function getContacts(xml) {
     
     //fill array with company contacts
     for (i = 0; i < x.length; i++) {
-        first = x[i].childNodes[1].textContent;
-        last = x[i].childNodes[3].textContent;
-        email = x[i].childNodes[5].textContent;
-        company = x[i].childNodes[9].textContent;
+        if (x[i].childNodes.length > 9) {
+            
+            first = x[i].childNodes[1].textContent;
+            last = x[i].childNodes[3].textContent;
+            email = x[i].childNodes[5].textContent;
+            info1 = x[i].childNodes[7].textContent;
+            info2 = x[i].childNodes[9].textContent;
+
+            console.log("getContacts() " + i + " :");
+            console.log("first name: " + first);
+            console.log("last name: " + last);
+            console.log("email: " + email);
+            console.log("info1: " + info1);
+            console.log("info2: " + info2);
+
+            contacts[a] = new contactObj(first, last, email, info1, info2);
+
+            a += 1;
+        } else {
+            break;
+        }
         
-        console.log("getContacts() " + i + " :");
-        console.log("first name: " + first);
-        console.log("last name: " + last);
-        console.log("email: " + email);
-        console.log("company: " + company);
-        
-        contacts[a] = new contactObj(first, last, email, company);
-        
-        a += 1;
     }
 
     console.log("x.length = " + x.length);
