@@ -40,8 +40,7 @@ function matchContacts() {
     'use strict';
     var companies,
         contacts,
-        a,
-        b;
+        a, b, c;
     console.log("START matchContacts()");
     //get the selected array and store in the companies variable
     companies = getSelections();
@@ -53,7 +52,9 @@ function matchContacts() {
         console.log("company " + a + ": " + companies[a]);
     }
     
-    console.log("matchContacts() contacts: " + contacts);
+    for (b = 0; b < contacts.length; b +=1) {
+        //if (contacts[b].info2 === companies[c])
+    }
     
     //iterate over contractor xml file, find their matches
     
