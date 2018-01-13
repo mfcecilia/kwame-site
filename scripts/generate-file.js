@@ -40,11 +40,13 @@ function matchContacts() {
     'use strict';
     var companies,
         contacts,
+        matched=[],
+        matched_list=[],
         a, b, c;
     console.log("START matchContacts()");
     //get the selected array and store in the companies variable
     companies = getSelections();
-    
+    //iterate over contractor xml file, gather contacts
     contacts = loadContactsXML();
     
     console.log("matchContacts() companies: " + companies);
@@ -52,18 +54,25 @@ function matchContacts() {
         console.log("company " + a + ": " + companies[a]);
     }
     
+    //match the companies with their contacts
     for (b = 0; b < contacts.length; b +=1) {
-        //if (contacts[b].info2 === companies[c])
+        if ((contacts[b].info2 === companies[c]) || (contacts[b].info1 === companies[c])) {
+            console.log("Found a match: " + companies[c] + " and " + contacts[b].first);
+            //create an array for each company
+            matched[0] = companies[c];
+            matched[1] = contacts[b];
+            console.log("matched: " + matched);
+        }
+        else {
+            continue;
+        }
+        //store all matches into an array to generate a file
+        matched_list.append(matched);
     }
-    
-    //iterate over contractor xml file, find their matches
-    
-    //create an array for each company
-    
-    //store all their contact info into the arrays
-    
+
     //return each array
     console.log("END matchContacts()");
+    return matched_list
 }
 
 
