@@ -85,3 +85,13 @@ function loadAlphaXML() {
     
     console.log("END loadAlphaXML()");
 }
+
+
+
+function load_json() {
+    'use strict';
+    var x;
+    for (x = 0; x < data.length; x++) {
+        console.log("json_data company: " + data[x].FIELD4);
+    }
+}

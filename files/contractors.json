@@ -1,5 +1,4 @@
-[
- {
+var data = [{
    "FIELD1": "Kristin",
    "FIELD2": "Frese",
    "FIELD3": "kristin.frese@accenture.com",
@@ -12409,5 +12408,4 @@
    "FIELD3": "zoomplayer1@gmail.com",
    "FIELD4": "",
    "FIELD5": ""
- }
-]
+ }];

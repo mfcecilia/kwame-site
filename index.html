@@ -7,12 +7,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
+    <script src="files/contractors.json"></script>
     <script src="scripts/contractors.js"></script>
     <script src="scripts/job-select.js"></script>
     <script src="scripts/job-search.js"></script>
     <script src="scripts/contacts.js"></script>
     <script src="scripts/generate-file.js"></script>
     <script src="scripts/purchase.js"></script>
+    
     
     <link rel="shortcut icon" href="#" />
     
@@ -139,7 +141,7 @@
             
             <div id="result-preview" class="result-view"></div>
             
-            <button id="purchase" onclick="matchContacts()">Purchase</button>
+            <button id="purchase" onclick="load_json()">Purchase</button>
             
         </div>
         
