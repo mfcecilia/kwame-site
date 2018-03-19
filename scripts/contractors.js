@@ -86,12 +86,28 @@ function loadAlphaXML() {
     console.log("END loadAlphaXML()");
 }
 
-
+/*
+*
+*
+*parse contractor json
+*
+*
+*/
 
 function load_json() {
     'use strict';
-    var x;
+    var x, y, z, companyArr, companyModal;
+    companyArr = [];
+    companyModal = [];
     for (x = 0; x < data.length; x++) {
-        console.log("json_data company: " + data[x].FIELD4);
+        if (data[x].FIELD4 !== "") {
+            if (companyArr.includes(data[x].FIELD4)) {
+                continue;
+            } else {
+                companyArr.push(data[x].FIELD4);
+                console.log("added:" + data[x].FIELD4);
+            }
+            
+        }
     }
 }
