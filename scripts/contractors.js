@@ -94,20 +94,49 @@ function loadAlphaXML() {
 *
 */
 
-function load_json() {
+function get_companies() {
     'use strict';
-    var x, y, z, companyArr, companyModal;
+    var x, companyArr;
     companyArr = [];
-    companyModal = [];
+    console.log("num of data itmes: " + data.length);
     for (x = 0; x < data.length; x++) {
         if (data[x].FIELD4 !== "") {
             if (companyArr.includes(data[x].FIELD4)) {
                 continue;
             } else {
                 companyArr.push(data[x].FIELD4);
-                console.log("added:" + data[x].FIELD4);
             }
-            
         }
+    }
+    console.log("num of items in company array: " + companyArr.length);
+    return companyArr;
+}
+
+
+/*
+*
+*
+*load jobs modal with companies
+*
+*
+*/
+//attempt at better version of alphaContractors(xml)
+function load_companies() {
+    'use strict';
+    var i, job_list, arr, space, div;
+    arr = get_companies();
+    console.log("arr size: " + arr.length);
+    job_list = document.getElementById("alpha-list-container");
+    
+    //load modal with company names
+    for (i = 0; i < arr.length; i++) {
+        console.log("arr " + i + ": " + arr[i]);
+        space = document.createElement("br");
+        div = document.createElement("div");
+        div.textContent = arr[i];
+        div.id = "alpha-select";
+        div.setAttribute("onclick", "alphaSelect(" + i + ")");
+        job_list.appendChild(space);
+        job_list.appendChild(div);
     }
 }

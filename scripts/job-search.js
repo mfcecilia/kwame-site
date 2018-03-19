@@ -1,20 +1,8 @@
-/*jslint vars: true, plusplus: true, devel: true, nomen: true, indent: 4, maxerr: 50 */
-/* global define */
-/* jslint latedef:false*/
-
-
-
-
-
-
-
 /*
 *
 Open Company List Modal
 *
 */
-
-
 
 function alphaBtnEvents() {
     'use strict';
@@ -43,12 +31,12 @@ function alphaBtnEvents() {
         
         
         //close modal if clicked while modal is already open
-        if (jobsAlphaModal.style.display === "block") {
-            jobsAlphaModal.style.display = "none";
+        if (jobsAlphaModal.style.visibility === "visible") {
+            jobsAlphaModal.style.visibility = "hidden";
             jobsAlphaBtn.innerHTML = "Select Companies";
         } else {
             //display the modal
-            jobsAlphaModal.style.display = "block";
+            jobsAlphaModal.style.visibility = "visible";
             jobsAlphaBtn.innerHTML = "Close X";
         }
         

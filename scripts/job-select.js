@@ -7,36 +7,45 @@ function alphaSelect(company) {
     'use strict';
     //company arg is a number representing the company index being clicked
     
-    
-    var clicked;
+    var clicked, result_div, result_preview, space, trash_icon;
     
     clicked = document.getElementsByClassName('alpha-list-container')[0].getElementsByTagName('div')[company];
+    result_preview = document.getElementById("result-preview");
     
     console.log("START alphaSelect(company)");
+    
+    console.log("clicked: " + clicked.textContent);
 
     //check if deselecting
     if (clicked.style.color === "white") {
         console.log("already selected. deselecting now");
-        document.getElementsByClassName('alpha-list-container')[0].getElementsByTagName('div')[company].style.color = "black";
-        document.getElementsByClassName('alpha-list-container')[0].getElementsByTagName('div')[company].style.background = "#f1e9e7";
+        clicked.style.color = "black";
+        clicked.style.background = "#f1e9e7";
         
     } else {
         
         //highlight selection on click
-        document.getElementsByClassName('alpha-list-container')[0].getElementsByTagName('div')[company].style.color = "white";
-        document.getElementsByClassName('alpha-list-container')[0].getElementsByTagName('div')[company].style.background = "#164f9c";
+        clicked.style.color = "white";
+        clicked.style.background = "#164f9c";
     }
     
     //add to the result div with the same index
-    document.getElementById("result-preview").getElementsByTagName("div")[company].style.display = "block";
-    document.getElementById("result-preview").getElementsByTagName("div")[company].innerHTML = "<br>" + clicked.innerHTML + "<br>" + "<i class='fa fa-trash' onclick='resultRemove(" + company + ")'></i>" + "<br>";
+    space = document.createElement("br");
+    result_div = document.createElement("div");
+    trash_icon = document.createElement("i");
+    result_div.textContent = clicked.textContent;
+    trash_icon.class = "fa fa-trash";
+    trash_icon.setAttribute("onclick", "resultRemove(" + company + ")");
+    trash_icon.appendChild(space);
+    result_div.appendChild(space);
+    result_div.appendChild(trash_icon);
+    result_preview.appendChild(space);
+    result_preview.appendChild(result_div);
+    result_preview.getElementsByTagName("div")[0].style.display = "block";
 
     console.log("clicked: " + clicked.innerHTML);
     console.log("END alphaSelect(company)");
 }
-
-
-
 
 
 /*

@@ -26,7 +26,7 @@ All formatting related to the Jobs section
 
 /*jobs modal */
 .jobs-modal {
-    display: none; /*hidden by default*/
+    visibility: hidden; /*hidden by default*/
     z-index: 4; /*sit on top*/
     width: 100%; /*full width*/
     height: 100%; /*full height*/
@@ -141,7 +141,7 @@ RESULTS
 }
 
 #result-preview div {
-    display: none;
+    display: block;
     font-weight: 700;
     text-align: center;
     justify-content: center;
