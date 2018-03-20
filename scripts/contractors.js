@@ -130,7 +130,6 @@ function load_companies() {
     
     //load modal with company names
     for (i = 0; i < arr.length; i++) {
-        console.log("arr " + i + ": " + arr[i]);
         space = document.createElement("br");
         div = document.createElement("div");
         div.textContent = arr[i];

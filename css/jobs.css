@@ -155,7 +155,7 @@ RESULTS
 
 
 /*trash icon*/
-#result-preview i {
+#result-preview svg {
     cursor: pointer;
     padding-top: 1%;
     color: black;
@@ -165,10 +165,10 @@ RESULTS
 }
 
 /*trash icon*/
-#result-preview i:hover {
+#result-preview svg:hover {
     color: white;
+    background-color: #4CAF50; /* Green */
 }
-
 
 
 
@@ -176,9 +176,6 @@ RESULTS
 /*
 PURCHASE
 */
-
-
-
 
 
 /*purchase button*/
