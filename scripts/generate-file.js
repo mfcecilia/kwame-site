@@ -40,8 +40,8 @@ function matchContacts() {
     'use strict';
     var companies,
         contacts,
-        matched=[],
-        matched_list=[],
+        matched = [],
+        matched_list = [],
         a, b, c;
     console.log("START matchContacts()");
     //get the selected array and store in the companies variable
@@ -55,7 +55,7 @@ function matchContacts() {
     }
     
     //match the companies with their contacts
-    for (b = 0; b < contacts.length; b +=1) {
+    for (b = 0; b < contacts.length; b += 1) {
         if ((contacts[b].info2 === companies[c]) || (contacts[b].info1 === companies[c])) {
             console.log("Found a match: " + companies[c] + " and " + contacts[b].first);
             //create an array for each company
@@ -72,7 +72,7 @@ function matchContacts() {
 
     //return each array
     console.log("END matchContacts()");
-    return matched_list
+    return matched_list;
 }
 
 
