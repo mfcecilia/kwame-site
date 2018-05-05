@@ -40,13 +40,6 @@ function getContacts(xml) {
             info1 = x[i].childNodes[7].textContent;
             info2 = x[i].childNodes[9].textContent;
 
-            console.log("getContacts() " + i + " :");
-            console.log("first name: " + first);
-            console.log("last name: " + last);
-            console.log("email: " + email);
-            console.log("info1: " + info1);
-            console.log("info2: " + info2);
-
             contacts[a] = new contactObj(first, last, email, info1, info2);
 
             a += 1;
