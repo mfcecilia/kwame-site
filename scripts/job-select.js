@@ -47,7 +47,7 @@ Trash Icon Functionality
 function resultRemove(company) {
     'use strict';
     
-    var modalItem, resultItem, modalList, resultList;
+    var modalItem, resultItem, modalList, resultList, x;
     
     //modal list item with index
     modalItem = document.getElementsByClassName('alpha-list-container')[0].getElementsByTagName('div')[company];
@@ -59,7 +59,14 @@ function resultRemove(company) {
     modalList = document.getElementsByClassName('alpha-list-container')[0];
     
     //result preview list
-    resultList = document.getElementById('result-preview');
+    resultList = document.getElementById('result-preview').getElementsByTagName('div');
+    
+    for (x = 0; x < resultList.length; x++) {
+        if (resultList[x].textContent === modalItem.textContent) {
+            //hide from result view
+            resultList[x].style.display = "none";
+        }
+    }
     
     //hide from result view
     resultItem.style.display = "none";
